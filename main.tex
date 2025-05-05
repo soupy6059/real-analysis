@@ -1,0 +1,305 @@
+\documentclass[12pt]{report}
+
+% Page Formatting
+\usepackage[a4paper, margin=1in]{geometry}  % Page size and margins
+\usepackage{setspace}  % Line spacing
+\onehalfspacing  % 1.5 spacing
+\usepackage{xcolor}
+\usepackage{pagecolor}
+
+% Encoding and Language
+\usepackage[utf8]{inputenc}  % Encoding
+\usepackage[english]{babel}  % Language
+\usepackage{booktabs}
+\usepackage{tabularx} % tables
+
+% Math Packages
+\usepackage{amsmath, amssymb, amsthm, mathrsfs, cancel}  % Advanced math support
+
+% Hyperlinks
+
+% Bibliography
+\usepackage[numbers]{natbib}  % Citation style
+
+% boxes
+\usepackage[most]{tcolorbox} % this includes tikz i believe "t"
+\usetikzlibrary{math} % variables for math
+
+\title{Real Analysis}
+\author{Carter Aitken}
+\date{2025-05-05}
+\pagecolor{black!20!white}
+
+% VIM MACROES
+% swap everything in brackets
+% vi(F,"gyvi(F,��5vt)"hydi("hPF,xxf)i, ��5"gpx
+
+\newtheoremstyle{theoremdd}%
+    {}%
+    {}%
+    {\it}%
+    {}%
+    {\bf}%
+    {}%
+    { }%
+    {\thmname{#1}\thmnumber{ #2}%
+    \thmnote{: #3\addcontentsline{toc}{subsubsection}{{\it#1}: #3}}. }
+\theoremstyle{theoremdd}
+
+% PICTURE EXAMPLE
+%\tikzmath{
+%    \CAwidth = 10;
+%    \CAarrowLen = 2;
+%    \CAoriginX = 2;
+%    \CAoriginY = 0;
+%    \CAmargin = 0.5;
+%    \CAhorAdj = 2;
+%}
+%\begin{tikzpicture}
+%    \draw[thick] (\CAoriginX,\CAoriginY) -- (\CAwidth+\CAoriginX,\CAoriginY); % board in river
+%    \fill[black] (\CAoriginX + \CAwidth / 2,\CAoriginY) circle (0.1cm); % centre dot
+%%    \draw[->] (0,0) -- (\CAarrowLen,\CAarrowLen) node[anchor=north east] {\((p-\e)^2\)}; % left arrow
+%    \draw (-\CAarrowLen+\CAoriginX,-\CAarrowLen+\CAoriginY) node (leftArrow) {\((p-\e)^2\)};
+%    \draw[->] (\CAoriginX,\CAoriginY) -- (leftArrow);
+%    \draw (\CAarrowLen+\CAoriginX+\CAwidth,\CAoriginY+\CAarrowLen) node (rightArrow) {\((p+\e)^2\)};
+%    \draw[->] (\CAoriginX+\CAwidth,\CAoriginY) -- (rightArrow);
+%    \draw (\CAoriginX + \CAwidth / 2,\CAoriginY-\CAmargin) node {\((p,q)\)};
+%    \draw (\CAoriginX, \CAoriginY+\CAmargin) node {\((p-\e,q)\)};
+%    \draw (\CAoriginX + \CAwidth,\CAoriginY-\CAmargin) node {\((p+\e,q)\)};
+%    \draw (\CAoriginX + \CAwidth / 2 + \CAmargin * 2, \CAoriginY) node (A) {};
+%    \draw (\CAoriginX + \CAwidth / 2 - \CAmargin * 2, \CAoriginY) node (B) {};
+%    \draw[thick,->] (A) to [bend right=45] (B);
+%\end{tikzpicture}
+
+% thm type declarations
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{prop}{Proposition}[section]
+
+\definecolor{berkblue}{rgb}{0.02,0.18,0.37}
+\definecolor{indigo}{rgb}{0,0.33,0.47}
+\definecolor{jungle}{rgb}{0.02,0.66,0.49}
+
+\definecolor{darkgoldenrod}{rgb}{0.72, 0.53, 0.04}
+\newcommand{\bbox}{\begin{tcolorbox}[colback=blue!20!white,colframe=blue]}
+\newcommand{\bboxproof}{\begin{tcolorbox}[colback=darkgoldenrod!20!white,colframe=darkgoldenrod]}
+\newcommand{\bboxex}{\begin{tcolorbox}[colback=red!20!white,colframe=red]}
+\newcommand{\bboxnote}{\begin{tcolorbox}[colback=yellow!20!white,colframe=yellow]}
+\newcommand{\ebox}{\end{tcolorbox}}
+
+% document tools
+
+
+\NewDocumentCommand{\sff}{}{\mathrm{I\!I}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+
+\newcommand{\mat}[2][bmatrix]{
+    \begin{#1} #2 \end{#1}
+}
+
+\newcommand{\inn}[1]{\left\langle #1\right\rangle}
+
+\newcommand{\T}[1]{\text{#1}}
+
+\newcommand{\TI}[1]{\textit{#1}}
+
+\newcommand{\TB}[1]{\textbf{#1}}
+
+\newcommand{\TU}[1]{\text{\underline{#1}}}
+
+\newcommand{\TM}[1]{(\T{#1})}
+
+\newcommand{\st}{\T{ s/t }}
+\newcommand{\ot}{\leftarrow}
+\newcommand{\limplies}{\Longleftarrow}
+\newcommand{\is}{\ot}
+
+\newcommand{\mycornmat}[5][bmatrix]{
+    \begin{#1}
+        #2 & \cdots & #3 \\
+        \vdots & \ddots & \vdots \\
+        #4 & \cdots & #5
+    \end{#1}
+}
+
+\newcommand{\subeq}{\subseteq}
+\newcommand{\supeq}{\supseteq}
+
+\newcommand{\CCOS}{connected compact orientable surface}
+\newcommand{\cts}{\mathrm{cnts}}
+\newcommand{\nbhd}{\mathrm{nbhd}}
+\newcommand{\open}{\mathrm{open}}
+\newcommand{\spc}{\T{ }}
+\newcommand{\md}{\,\mathrm{d}}
+\newcommand{\e}{\epsilon}
+\newcommand{\de}{\delta}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\om}{\Omega}
+\newcommand{\PP}{\mathcal P}
+\newcommand{\XX}{\mathcal X}
+\newcommand{\QQ}{\mathcal Q}
+
+
+% Document Starts
+\begin{document}
+
+\maketitle 
+
+\begin{abstract}
+  Real Analysis the study of approximation on the reals.
+\end{abstract}
+
+\tableofcontents
+
+\pagebreak
+% <++>
+
+\chapter{Cardinality}
+\section{Brief Motivation}
+We want to build a metric space to measure the distance between objects.
+
+We need
+\begin{enumerate}
+  \item set $X$ of objects.
+  \item need to measure closeness. func \(d:X\times X\to[0,\infty)\) s/t
+    \begin{enumerate}
+      \item \(d(x,y)=0\iff x=y\)
+      \item \(d(x,y)=d(y,x)\)
+      \item \(d(x,z)\le d(x,y)+d(y,z)\)
+    \end{enumerate}
+\end{enumerate}
+
+We call \(d\) a metric on \(X\). \((X,d)\) is a \TB{metric space}.
+\bboxex
+\((\R,+'\circ^\circ(\sqrt{\,}^=)-)\) is a metric space. Note the BQN notation.
+\ebox
+
+\section{Function Theory}
+\bbox
+\begin{defn}[Injection]
+  Let \(A,B\) be non-empty sets. We say \(f:A\to B\) is injective \TB{iff}
+  \(\forall a,b\in A\quad f(a)=f(b)\implies a=b\)
+\end{defn}
+\ebox
+
+\bbox
+\begin{defn}[Surjection]
+  \(f:A\to B\) is a surjection if \(\forall b\in B\quad\exists a\in A\st f(a)
+  = b\).
+\end{defn}
+\ebox
+
+\bbox
+\begin{defn}[Bijective]
+  \(f:A\to B\) is bijective \TB{iff} its injective and surjective.
+\end{defn}
+\ebox
+
+
+\bbox
+\begin{defn}[Invertable]
+  \(f:A\to B\) is invertable \TB{iff} \(\exists g:B\to A\st g(f(a))=a\T{ and }
+  f(g(b))=b\quad\forall a\in A,\,b\in B\).
+\end{defn}
+\ebox
+We write \(g=f^{-1}\) and call it "the" inverse.
+
+
+\bbox
+\begin{prop}
+  \(f:A\to B\) is invertable \TB{iff} f is bijective.
+\end{prop}
+\ebox
+
+\begin{proof}
+  \((\implies)\) \(f\) is invertable. Suppose \(f(a)=f(b)\). We'll show \(a=b\).
+  \[f^{-1}f(a))=f^{-1}f(b))\]
+  \[\implies a=b\]
+  
+  Now we'll show \(\forall b\in B\;\exists a\in A\;f(a)=b\).
+  \[a=f^{-1}(b)\implies\T{there is way to get from b to a, and it's }f^{-1}\]
+
+  \((\limplies)\) Assume \(f\is(\T{bijective})\). We'll construct \(f\)'s
+  inverse. For \(b\in B\) let \(a_b\) be the unique element of \(A\st f(a_b)=b\).
+  \(a_b\) exists b/c of surjectivity of f, and it's unique b/c of injectivity.
+  \[g:=\{g:A\to B,\,g(b)=a_b\}\]
+  \[f(g(b))=f(a_b)=b\]
+  \[g(f(a_b))=g(b)=a_b\]
+  \[\implies g=f^{-1}\]
+\end{proof}
+
+\bbox
+\begin{prop}
+  \(\exists(\T{injection})\,f:A\to B\iff\exists(\T{surjection})\,g:B\to A\)
+\end{prop}
+\ebox
+
+\begin{proof}
+  \((\implies)\) Suppose \(f:A\to B\is(\T{injective})\). Let \(b\in B\).
+  
+  Case 1: \(b\in f(A)\). 
+
+  Let \(g(b)\) be the unique element of \(A\st f(g(b))=b\), unique b/c 
+  \(f\is\TM{injective}\)
+
+  Case 2: \(b\not\in f(A)\).
+
+  Fix any \(z\in A\). Let \(g(b)=z\).
+  
+  \begin{equation}
+    \implies g(b)=\begin{cases}f^{=}(b)&b\in f(A)\\ z&b\not\in f(A)\end{cases}
+  \end{equation}
+
+  We claim \(g\) is a surjection. 
+  So we have to show
+  \(\forall a\in A,\,\exists b\in B\st g(b)=a\)
+  Let \(a\in A\st f(a)\in B\).
+  \[g(f(a))\implies f(g(f(a)))=f(a)\]
+  \[\TM{injective}\implies g(f(a))=a\]
+  \[\implies g\is\TM{surjective}\]
+
+  \(\limplies\) Suppose \((g:B\to A)\is\TM{surjective}\).
+  \(\forall a\in A\T{ choose }b_a\in B\st g(b_a)=a\).
+  \(f:=\{f:A\to B\quad f(a)=b_a\}\). Suppose
+  \[f(x)=f(y)\]
+  \[\implies b_x=b_y\]
+  \[\implies g(b_x)=g(b_y)\]
+  \[\implies x=y\]
+  \[\implies f\is\TM{injective}\]
+\end{proof}
+
+% <++>
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% scrolloff buffer

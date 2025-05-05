@@ -1,0 +1,8 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Cardinality}{2}{}%
+\contentsline {section}{\numberline {1.1}Brief Motivation}{2}{}%
+\contentsline {section}{\numberline {1.2}Function Theory}{2}{}%
+\contentsline {subsubsection}{{\it Definition}: Injection}{2}{}%
+\contentsline {subsubsection}{{\it Definition}: Surjection}{2}{}%
+\contentsline {subsubsection}{{\it Definition}: Bijective}{2}{}%
+\contentsline {subsubsection}{{\it Definition}: Invertable}{3}{}%
