@@ -1,8 +1,16 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Cardinality}{2}{}%
-\contentsline {section}{\numberline {1.1}Brief Motivation}{2}{}%
-\contentsline {section}{\numberline {1.2}Function Theory}{2}{}%
-\contentsline {subsubsection}{{\it Definition}: Injection}{2}{}%
-\contentsline {subsubsection}{{\it Definition}: Surjection}{2}{}%
-\contentsline {subsubsection}{{\it Definition}: Bijective}{2}{}%
-\contentsline {subsubsection}{{\it Definition}: Invertable}{3}{}%
+\contentsline {section}{\numberline {1}Cardinality}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Brief Motivation}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Function Theory}{2}{subsection.1.2}%
+\contentsline {subsubsection}{{\it Definition}: Injection}{2}{defn.1.1}%
+\contentsline {subsubsection}{{\it Definition}: Surjection}{2}{defn.1.2}%
+\contentsline {subsubsection}{{\it Definition}: Bijective}{2}{defn.1.3}%
+\contentsline {subsubsection}{{\it Definition}: Invertable}{2}{defn.1.4}%
+\contentsline {subsubsection}{{\it Definition}: Powerset}{4}{defn.1.5}%
+\contentsline {subsubsection}{{\it Axiom}: Choice}{4}{axim.1.1}%
+\contentsline {subsection}{\numberline {1.3}Cardinality}{5}{subsection.1.3}%
+\contentsline {subsubsection}{{\it Definition}: Ordering of Cardinality on Sets}{5}{defn.1.6}%
+\contentsline {subsubsection}{{\it Theorem}: Cantor-Schroeder-Berstien (CSB)}{5}{thm.1.1}%
+\contentsline {subsubsection}{{\it Lemma}: Phi has a Fixed Point}{5}{lem.1.1}%
+\contentsline {subsubsection}{{\it Definition}: Finite, Countably Infinite, Countable}{8}{defn.1.7}%
+\contentsline {subsubsection}{{\it Proposition}: Aleph Null is the Smallest Infinity}{8}{prop.1.3}%

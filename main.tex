@@ -1,150 +1,5 @@
-\documentclass[12pt]{report}
-
-% Page Formatting
-\usepackage[a4paper, margin=1in]{geometry}  % Page size and margins
-\usepackage{setspace}  % Line spacing
-\onehalfspacing  % 1.5 spacing
-\usepackage{xcolor}
-\usepackage{pagecolor}
-
-% Encoding and Language
-\usepackage[utf8]{inputenc}  % Encoding
-\usepackage[english]{babel}  % Language
-\usepackage{booktabs}
-\usepackage{tabularx} % tables
-
-% Math Packages
-\usepackage{amsmath, amssymb, amsthm, mathrsfs, cancel}  % Advanced math support
-
-% Hyperlinks
-
-% Bibliography
-\usepackage[numbers]{natbib}  % Citation style
-
-% boxes
-\usepackage[most]{tcolorbox} % this includes tikz i believe "t"
-\usetikzlibrary{math} % variables for math
-
-\title{Real Analysis}
-\author{Carter Aitken}
-\date{2025-05-05}
-\pagecolor{black!20!white}
-
-% VIM MACROES
-% swap everything in brackets
-% vi(F,"gyvi(F,��5vt)"hydi("hPF,xxf)i, ��5"gpx
-
-\newtheoremstyle{theoremdd}%
-    {}%
-    {}%
-    {\it}%
-    {}%
-    {\bf}%
-    {}%
-    { }%
-    {\thmname{#1}\thmnumber{ #2}%
-    \thmnote{: #3\addcontentsline{toc}{subsubsection}{{\it#1}: #3}}. }
-\theoremstyle{theoremdd}
-
-% PICTURE EXAMPLE
-%\tikzmath{
-%    \CAwidth = 10;
-%    \CAarrowLen = 2;
-%    \CAoriginX = 2;
-%    \CAoriginY = 0;
-%    \CAmargin = 0.5;
-%    \CAhorAdj = 2;
-%}
-%\begin{tikzpicture}
-%    \draw[thick] (\CAoriginX,\CAoriginY) -- (\CAwidth+\CAoriginX,\CAoriginY); % board in river
-%    \fill[black] (\CAoriginX + \CAwidth / 2,\CAoriginY) circle (0.1cm); % centre dot
-%%    \draw[->] (0,0) -- (\CAarrowLen,\CAarrowLen) node[anchor=north east] {\((p-\e)^2\)}; % left arrow
-%    \draw (-\CAarrowLen+\CAoriginX,-\CAarrowLen+\CAoriginY) node (leftArrow) {\((p-\e)^2\)};
-%    \draw[->] (\CAoriginX,\CAoriginY) -- (leftArrow);
-%    \draw (\CAarrowLen+\CAoriginX+\CAwidth,\CAoriginY+\CAarrowLen) node (rightArrow) {\((p+\e)^2\)};
-%    \draw[->] (\CAoriginX+\CAwidth,\CAoriginY) -- (rightArrow);
-%    \draw (\CAoriginX + \CAwidth / 2,\CAoriginY-\CAmargin) node {\((p,q)\)};
-%    \draw (\CAoriginX, \CAoriginY+\CAmargin) node {\((p-\e,q)\)};
-%    \draw (\CAoriginX + \CAwidth,\CAoriginY-\CAmargin) node {\((p+\e,q)\)};
-%    \draw (\CAoriginX + \CAwidth / 2 + \CAmargin * 2, \CAoriginY) node (A) {};
-%    \draw (\CAoriginX + \CAwidth / 2 - \CAmargin * 2, \CAoriginY) node (B) {};
-%    \draw[thick,->] (A) to [bend right=45] (B);
-%\end{tikzpicture}
-
-% thm type declarations
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{lem}{Lemma}[section]
-\newtheorem{defn}{Definition}[section]
-\newtheorem{coro}{Corollary}[section]
-\newtheorem{prop}{Proposition}[section]
-
-\definecolor{berkblue}{rgb}{0.02,0.18,0.37}
-\definecolor{indigo}{rgb}{0,0.33,0.47}
-\definecolor{jungle}{rgb}{0.02,0.66,0.49}
-
-\definecolor{darkgoldenrod}{rgb}{0.72, 0.53, 0.04}
-\newcommand{\bbox}{\begin{tcolorbox}[colback=blue!20!white,colframe=blue]}
-\newcommand{\bboxproof}{\begin{tcolorbox}[colback=darkgoldenrod!20!white,colframe=darkgoldenrod]}
-\newcommand{\bboxex}{\begin{tcolorbox}[colback=red!20!white,colframe=red]}
-\newcommand{\bboxnote}{\begin{tcolorbox}[colback=yellow!20!white,colframe=yellow]}
-\newcommand{\ebox}{\end{tcolorbox}}
-
-% document tools
-
-
-\NewDocumentCommand{\sff}{}{\mathrm{I\!I}}
-\newcommand{\R}{\mathbb R}
-\newcommand{\N}{\mathbb N}
-\newcommand{\Q}{\mathbb Q}
-\newcommand{\Z}{\mathbb Z}
-
-\newcommand{\mat}[2][bmatrix]{
-    \begin{#1} #2 \end{#1}
-}
-
-\newcommand{\inn}[1]{\left\langle #1\right\rangle}
-
-\newcommand{\T}[1]{\text{#1}}
-
-\newcommand{\TI}[1]{\textit{#1}}
-
-\newcommand{\TB}[1]{\textbf{#1}}
-
-\newcommand{\TU}[1]{\text{\underline{#1}}}
-
-\newcommand{\TM}[1]{(\T{#1})}
-
-\newcommand{\st}{\T{ s/t }}
-\newcommand{\ot}{\leftarrow}
-\newcommand{\limplies}{\Longleftarrow}
-\newcommand{\is}{\ot}
-
-\newcommand{\mycornmat}[5][bmatrix]{
-    \begin{#1}
-        #2 & \cdots & #3 \\
-        \vdots & \ddots & \vdots \\
-        #4 & \cdots & #5
-    \end{#1}
-}
-
-\newcommand{\subeq}{\subseteq}
-\newcommand{\supeq}{\supseteq}
-
-\newcommand{\CCOS}{connected compact orientable surface}
-\newcommand{\cts}{\mathrm{cnts}}
-\newcommand{\nbhd}{\mathrm{nbhd}}
-\newcommand{\open}{\mathrm{open}}
-\newcommand{\spc}{\T{ }}
-\newcommand{\md}{\,\mathrm{d}}
-\newcommand{\e}{\epsilon}
-\newcommand{\de}{\delta}
-\newcommand{\al}{\alpha}
-\newcommand{\be}{\beta}
-\newcommand{\om}{\Omega}
-\newcommand{\PP}{\mathcal P}
-\newcommand{\XX}{\mathcal X}
-\newcommand{\QQ}{\mathcal Q}
-
+\documentclass[12pt]{article}
+\usepackage{my_preamble}
 
 % Document Starts
 \begin{document}
@@ -160,8 +15,8 @@
 \pagebreak
 % <++>
 
-\chapter{Cardinality}
-\section{Brief Motivation}
+\section{Cardinality}
+\subsection{Brief Motivation}
 We want to build a metric space to measure the distance between objects.
 
 We need
@@ -180,23 +35,23 @@ We call \(d\) a metric on \(X\). \((X,d)\) is a \TB{metric space}.
 \((\R,+'\circ^\circ(\sqrt{\,}^=)-)\) is a metric space. Note the BQN notation.
 \ebox
 
-\section{Function Theory}
+\subsection{Function Theory}
 \bbox
-\begin{defn}[Injection]
+\begin{defn}[Injection] \label{defn:inj}
   Let \(A,B\) be non-empty sets. We say \(f:A\to B\) is injective \TB{iff}
   \(\forall a,b\in A\quad f(a)=f(b)\implies a=b\)
 \end{defn}
 \ebox
 
 \bbox
-\begin{defn}[Surjection]
+\begin{defn}[Surjection] \label{defn:surj}
   \(f:A\to B\) is a surjection if \(\forall b\in B\quad\exists a\in A\st f(a)
   = b\).
 \end{defn}
 \ebox
 
 \bbox
-\begin{defn}[Bijective]
+\begin{defn}[Bijective] \label{defn:bij}
   \(f:A\to B\) is bijective \TB{iff} its injective and surjective.
 \end{defn}
 \ebox
@@ -240,6 +95,7 @@ We write \(g=f^{-1}\) and call it "the" inverse.
 \end{prop}
 \ebox
 
+\bboxproof
 \begin{proof}
   \((\implies)\) Suppose \(f:A\to B\is(\T{injective})\). Let \(b\in B\).
   
@@ -252,9 +108,9 @@ We write \(g=f^{-1}\) and call it "the" inverse.
 
   Fix any \(z\in A\). Let \(g(b)=z\).
   
-  \begin{equation}
+  \begin{equation*}
     \implies g(b)=\begin{cases}f^{=}(b)&b\in f(A)\\ z&b\not\in f(A)\end{cases}
-  \end{equation}
+  \end{equation*}
 
   We claim \(g\) is a surjection. 
   So we have to show
@@ -273,6 +129,200 @@ We write \(g=f^{-1}\) and call it "the" inverse.
   \[\implies x=y\]
   \[\implies f\is\TM{injective}\]
 \end{proof}
+\ebox
+
+% lecture 2
+
+
+\bbox
+\begin{defn}[Powerset]
+  Let \(X\) be a set. Then \(\PP(X):=\{A:A\subseteq X\}\), called
+  the "\TB{powerset} of \(X\)."
+\end{defn}
+\ebox
+
+\bboxex
+\[X=\{a,b\}\]
+\[\PP(X)=\{\emptyset,\{a\},\{b\},\{a,b\}\}\]
+\ebox
+
+
+\bbox
+\begin{axim}[Choice]\label{axim:choice}
+  Given \(X\neq\emptyset\exists\T{a choice func }f:\PP(X)\backslash
+  \{\emptyset\}\to X\st f(A)\in A\;\forall\empty\neq A\subseteq A\).
+\end{axim}
+\ebox
+
+\subsection{Cardinality}
+\bboxex
+\[A=\{a,b\},\;B=\{c,d,e,f\}\]
+\[\T{Intuitively }|A|<|B|\]
+\[f\is\TM{inj}:A\to B,\;f(a):=c,\;f(b):=d\]
+\[\implies f\is\TM{inj}(A)\subset B\]
+\[\implies |A|\le |B|\]
+\ebox
+
+\bbox
+\begin{defn}[Ordering of Cardinality on Sets]
+  \(A,B\) sets.
+  \begin{enumerate}
+    \item \(|A|\le|B|\iff\exists f\is\TM{inj}:A\to B\)
+    \item \(|A|=|B|\iff\exists f\is\TM{bij}:A\to B\)
+  \end{enumerate}
+\end{defn}
+\ebox
+\bboxex
+\[|\N|\le|\Z|\limplies f\is\TM{inj}:\N\to\Z,\;f(n):=n\]
+\begin{equation*}
+  f\is\TM{bij}:\N\to\Z:f(n):=
+  \begin{cases}
+    2n+2&:n\ge0\\
+    2(-n)-1&:n<0
+  \end{cases}\implies|\N|=|\Z|
+\end{equation*}
+\[h\is\TM{bij}:\R\to(0,1):h(x):=\frac{\mathrm{arctan}(x)+\pi/2}\pi\implies|\R|=|(0,1)|\]
+\ebox
+
+\bbox
+\begin{thm}[Cantor-Schroeder-Berstien (CSB)] \label{thm:CSB}
+  if \(|A|\le|B|\) and \(|B|\le|A|\) then \(|A|=|B|\).
+\end{thm}
+\ebox
+
+
+\bbox
+\begin{lem}[Phi has a Fixed Point]\label{lem:phi_fixed_pt}
+  \(X\) set. Suppose \(\exists\phi:\PP(X)\to\PP(X)\st\phi(A)\subseteq\phi(B)
+  \T{ if }A\subseteq B\subseteq X\). Then
+  \[\exists F\subseteq X\st\phi(F)=F\]
+\end{lem}
+\ebox
+
+\bboxproof
+Let \(F=\bigcup_{A\subseteq X:A\subseteq\phi(A)}A\).
+\bboxnote
+\TB{Note:} \(\emptyset\subseteq X\;\&\;\emptyset\subseteq\phi(\emptyset)\)
+\ebox
+\TB{Claim:} \(F=\phi(F)\).
+Take \(A\subseteq X\) with \(A\subseteq\phi(A)\). Then \(A\subseteq F\).
+\[\implies\phi(A)\subseteq\phi(F)\]
+\[\implies A\subseteq\phi(F)\]
+\[\implies\bigcup_{A\subseteq X:A\subseteq\phi(A)}A\subseteq\phi(F)\quad
+\T{(by properties of unions)}\]
+\[\implies F\subseteq\phi(F)\]
+Further,
+\[F\subseteq \phi(F)\implies\phi(F)\subseteq\phi(\phi(F))\]
+\[\implies\phi(F)\in\{A\subseteq X:A\subseteq\phi(A)\}\]
+For this step, let \(\phi(F)=B\) and notice that \(B\subseteq\phi(B)\). So
+its in the set above.
+\[\implies\phi(F)\subseteq\bigcup_{A\subseteq X:A\subseteq\phi(A)}A=F\]
+
+\[\implies F=\phi(F)\]
+\ebox
+
+\bboxex
+\TB{To motivate (CSB)~\cref{thm:CSB}:} prove that \(|N|=|N\times N|\).
+\[f\is\TM{inj}:\N\to\N\times\N,\;f(n):=(n,1)\]
+\[g\is\TM{inj}:\N\times\N\to\N,\;g((n,m)):=2^n3^m\]
+By (CSB) \(|\N|=|\N\times\N|\).
+\ebox
+
+% lecture 3
+
+\bboxproof
+\begin{proof} of (CSB)~\cref{thm:CSB}.
+  Let \(f,g\is\TM{inj}:A:B\). For \(X\subseteq Y\subseteq A\)
+\[f(X)\subseteq f(Y)\]
+\[\implies B\backslash f(Y)\subseteq B\backslash f(X)\]
+\[\implies g(B\backslash f(Y))\subseteq g(B\backslash f(X))\]
+\[\implies A\backslash g(B\backslash f(X))\subseteq A\backslash g(B\backslash f(Y))\]
+This letting \(\phi:\PP(A)\to\PP(A):\phi(x):=A\backslash g(B\backslash f(x))\)
+insures it preserves \(\subseteq\).
+So by the \cref{lem:phi_fixed_pt}, \(\exists F\subseteq A
+\st F=\phi(F)=A\backslash g(B\backslash f(F))\). In particular, \(A
+\backslash F=g(B\backslash f(F))\implies g:B\backslash f(F)\to A\backslash F
+:\is\TM{bij}\).
+\bboxnote
+\TB{Note.} It's a surjection b/c everyone in \(A\backslash F\) gets mapped to
+b/c it's the image if \(g(B\backslash f(F))\).
+\ebox
+Moreover, \(\inv g:A\backslash F\to B\backslash f(F)\) is a bijection, and
+\(f:F\to f(F)\) is a bijection (for the same reason as above; restriction of
+domain of an injective function is injective, and a function that maps to its image is
+automatically a surjection). Hence
+\begin{equation*}
+  h:A\to B:h(x):=
+  \begin{cases}
+    \inv g(x) &:x\in A\backslash F\\
+    f(x) &:x\in F
+  \end{cases}
+\end{equation*}
+\end{proof}
+\ebox
+
+\bboxex
+Show \(|\Q|=|\N|\).
+\bboxproof
+\begin{proof}
+  \[f:\N\to\Q:f(x):=x\implies|\N|\le|\Q|\]
+  \(q\in\Q\) can be written in the form \(q=\frac m n,\;m\in\Z,\,n\in\N\).
+  \[g:\Q\to\Z\times\N:g(q):=(m,n)\;:\;q=\frac m n\]
+  \[\implies|\Q|\le|\Z\times\N|=|\N\times\N|=|\N|\]
+  So by (CSB) \cref{thm:CSB}, \(|\Q|=|\N|\).
+\end{proof}
+\ebox
+\ebox
+
+
+\bbox
+\begin{defn}[Finite, Countably Infinite, Countable]
+  \(\,\)\begin{enumerate}
+    \item a set \(A\) is \TB{finite} \TU{iff} \(|A|=|\{1,2,\dots,n\}|\)
+      for some \(n\in\N\). In this case, \(|A|=n\).
+    \item \(|\emptyset|:=0\)
+    \item \(A\) is \TB{countably infinite} \TU{iff} 
+      \(|A|=|\N|:=\aleph_0\).
+    \item \(A\) is countable \TU{iff} \(A\) is finite or ctbly infinite.
+  \end{enumerate}
+\end{defn}
+\ebox
+
+\bboxex
+\[|\N|=|\Z|=|\N\times\N|=|\Q|=\aleph_0\]
+\ebox
+
+
+\bbox
+\begin{prop}[Aleph Null is the Smallest Infinity]\label{prop:aleph_null_small}
+  If \(A\) is infinite, then \(|\N|\le|A|\).
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+  By (Choice) \cref{axim:choice}, \(\exists f:\PP(A)\backslash\{\emptyset\}\to
+  A\st f(X)\in X,\;\forall\emptyset\neq X\subseteq A\).
+  \begin{equation*}
+    \begin{split}
+      \T{Let }a_1&=f(A)\in A\\
+      a_2&=f(A\backslash\{a_1\})\in A\backslash\{a_1\}\\
+         &\vdots
+    \end{split}
+  \end{equation*}
+  \(\implies\aleph_0=|\{a_1,\dots\}|\le|A|\).
+\end{proof}
+\ebox
+
+\bboxex
+\(\R\) is uncountable. So \(\not\exists f\is\TM{bij}:\N\to\R\).
+\bboxproof
+  \begin{proof}
+    Since \(|\R|=|(0,1)|\), we'll show that \((0,1)\) is uncountable.
+  \end{proof}
+\ebox
+\ebox
+
 
 % <++>
 \end{document}
