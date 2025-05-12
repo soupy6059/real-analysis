@@ -231,7 +231,7 @@ By (CSB) \(|\N|=|\N\times\N|\).
 % lecture 3
 
 \bboxproof
-\begin{proof} of (CSB)~\cref{thm:CSB}.
+\begin{proof}[Proof of (CSB)~\cref{thm:CSB}]
   Let \(f,g\is\TM{inj}:A:B\). For \(X\subseteq Y\subseteq A\)
 \[f(X)\subseteq f(Y)\]
 \[\implies B\backslash f(Y)\subseteq B\backslash f(X)\]
@@ -314,13 +314,224 @@ Show \(|\Q|=|\N|\).
 \end{proof}
 \ebox
 
-\bboxex
+\bbox
+\begin{prop}[The Reals are Uncountable]\label{prop:uncountable_reals}
 \(\R\) is uncountable. So \(\not\exists f\is\TM{bij}:\N\to\R\).
 \bboxproof
-  \begin{proof}
+  \begin{proof} \TB{Cantor's Diagonal Element Proof.} 
     Since \(|\R|=|(0,1)|\), we'll show that \((0,1)\) is uncountable.
+
+    For contradiction, assume that there exists a bijection \(f:\N\to(0,1)\).
+
+    So let's say
+    \begin{equation*}
+      \begin{split}
+        f(1)&=0.a_{11}a_{12}a_{13}\cdots\\
+        f(2)&=0.a_{21}a_{22}a_{23}\cdots\\
+        f(3)&=0.a_{31}a_{32}a_{33}\cdots\\
+        \vdots&=\vdots
+      \end{split}
+    \end{equation*}
+    Where we avoid repeated nines.
+
+    Choose \(b_i\in\{1,\dots,8\}\st b_i\neq a_{ii}\).
+    \[\implies\not\exists n\in\N,\;f(n)=0.b_1b_2b_3\cdots\]
+    Thats a contradiction.
   \end{proof}
 \ebox
+\end{prop}
+\ebox
+
+
+\bbox
+\begin{defn}[Continuum]\label{defn:continuum}
+  We write \(|\R|=c\), where \(c\) stands for \TB{continuum}.
+\end{defn}
+\ebox
+
+So we have 3 cardinals: \(n,\aleph_0,c\).
+
+
+\bbox
+\begin{axim}[Continuum Hypothesis]\label{axim:continuum_hypth}
+  If \(A\) is a set with \(\aleph_0\le|A|\le c\), then
+  \(\aleph_0=|A|\) or \(|A|=c\).
+\end{axim}
+\ebox
+
+\subsection{Cardinality of Power Sets}
+
+
+\bbox
+\begin{prop}
+  If \(|A|=n\), then \(|\PP(A)|=2^n\).
+\end{prop}
+\ebox
+\bboxproof
+\begin{proof}[Proof]
+  \[|\PP(A)|=\sum_{k=1}^n\binom nk=(1+1)^n=2^n\]
+\end{proof}
+\ebox
+
+
+% lecture 4
+
+
+
+\bbox
+\begin{defn}[Cartesian Product]\label{defn:cartesian_product}
+  Let \(I\) be a set. \(\forall i \in I\;\T{Let }A_i\is\TM{set}\implies
+  \prod_{i\in I}A_i:=\{f|f:I\to\bigcup A_i,\;f(i)\in A_i\}\)
+\end{defn}
+\ebox
+
+
+\bboxnote
+\[f(i)\in A_i\]
+\[I=\N\implies f:\N\to\bigcup A_i:f(i):\!\in A_i\equiv(f(1),f(2),\dots)\]
+\ebox
+
+\bbox
+\begin{defn}[Set Power]\label{defn:set_power}
+  \(A,B\is\TM{set}\implies A^B=\{f:B\to A\}\)
+  \[|A|^{|B|}:=\left|A^B\right|=|\{f:B\to A\}|\]
+\end{defn}
+\ebox
+
+\bbox
+\begin{prop}[Cardinality of a Power Set]\label{prop:card_of_powerset}
+  if \(X\is\TM{set}\), \(\PP(X)=2^{|X|}=|\{f:X\to\{0,1\}\}|\).
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+  \begin{equation*}
+    \begin{split}
+      \phi:\PP(X)\to\{f:X\to\{0,1\}\}:\phi(A)&:=\chi_A\\
+      \chi_A:X\to\{0,1\}:\chi_A(x)&:=
+      \begin{cases}
+        1 &: x\in A\\
+        0 &: x\not\in A
+      \end{cases}
+    \end{split}
+  \end{equation*}
+  Show \(\phi\is\TM{bij}\). First show it's injective.
+  \[\phi(A)=\phi(B)\]
+  \[\implies\chi_A=\chi_B\] % :'<,'>s/(\(.\))/_\1/g
+  \[\implies A=B\implies\phi\is\TM{inj}\] % :'<,'>s/(\(.\))/_\1/g
+  Now show it's surjective. \(\forall f\in\{f:X\to\{0,1\}\}\;\exists P\in \PP(X)\st
+  \phi(P)=f\).
+  \[\T{Let }\inv f(\{0,1\})=\inv F\]
+  \[\implies \chi_{\inv F}:\inv F\to\{0,1\}\]
+  \[\implies\chi_{\inv F}=\phi(\inv F)\T{ w/ }\phi(\inv F)=f\]
+  \[\inv F\subseteq X\implies \inv F\in\PP(X)\implies \phi\is\TM{surj}\]
+\end{proof}
+\ebox
+
+
+\bbox
+\begin{prop}[The Powerset is Larger than the Set]\label{prop:powerset_big}
+  If \(X\is\TM{set}\), then \(|X|<|\PP(X)|\).
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+  Show \(|X|\le|\PP(X)|\). \(f(x)=\{x\}\is\TM{inj}\implies |X|\le|\PP(X)|\). 
+
+  For the sake on contradiction, assume there is a surjection \(g:X\to\PP(X)\).
+  Consider \(B:=\{x\in X:x\not\in g(x)\}\). Hence there must be (by surjectivity of \(g\))
+  \(z\in X\st g(z)=B\). Someone has to map to it.
+  \[z\in B\implies z\not\in g(z)=B\]
+  \[z\not\in B\implies z\in g(z)=B\]
+  This is a contradiction. So \(|X|<|\PP(X)|\).
+\end{proof}
+\ebox
+
+\bboxnote\label{note:infinite_infinities}
+\TB{Infinite Infinities}. \(|\N|<|\PP(\N)|<|\PP(\PP(\N))|<\dots\)
+\ebox
+
+\bbox
+\begin{prop}[The Natural Powerset Cardinal is the Continuum Cardinal]\label{prop:abs_pp_n_is_abs_r}
+  \(|\PP(\N)|=c\) \((\equiv 2^{\aleph_0}=c\equiv|\{0,1\}|^{|\N|}=|\R|)\)
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}\(\,\)
+  \bboxnote
+  We'll use the continuum hypthesis, however there's an alternative proof in 
+  the course notes.
+  \ebox
+  Consider \(X=\{f:\N\to\{0,1\}\}\).
+  \[\phi:X\to\R:\phi(f):=0.f(1)f(2)f(3)\dots\]
+  We can see that \(\phi\) is injective. So
+  \[2^{\aleph_0}=|X|\le|\R|=c\]
+  Also, \(\aleph_0<2^{\aleph_0}\le c\). So by (CH), we know \(2^{\aleph_0}=c\).
+\end{proof}
+\ebox
+
+
+\bboxproof
+\begin{proof}[Proof (without (CH))]
+  \(\dots\)
+\end{proof}
+\ebox
+
+\subsection{Cardinal Arithmetic}
+
+\bbox
+\begin{defn}
+  \(A,B\is\TM{sets}\)
+  \begin{enumerate}
+    \item \(A\cap B=\emptyset\implies|A|+|B|:=|A\cup B|\)
+    \item \(|A|\cdot|B|:=|A\times B|\)
+    \item \(|A|^{|B|}:=|\{f:B\to A\}|\)
+  \end{enumerate}
+\end{defn}
+\ebox
+
+\bboxex
+\TB{Example.} \(\aleph_0+\aleph_0=\aleph_0\). Let \(A=\{a_1,\dots\}\),
+\(B=\{b_1,\dots\}\), so that \(|A|=|B|=\aleph_0\), and \(A\cap B=\emptyset\).
+
+Then \(\phi:A\cup B\to\N:
+\phi(a_i):=2i,\;
+\phi(b_i):=2i-1\).
+This is a bijection.
+Hence
+\(|A\cup B|=\aleph_0\).
+\ebox
+
+\bboxex
+\TB{Example.} \(\aleph_0+c=c\).
+
+\(\aleph_0=|\N|,\;|(0,1)|=c\).
+\[(0,1)\subseteq\N\cup(0,1)
+\subseteq\R\]
+\[\implies c\le\aleph_0+c\le c\]
+\[\implies \aleph_0+c=c\]
+\ebox
+
+
+\bbox
+\begin{prop}[Cardinal Exponent Laws]
+  \(A,B,C\is\TM{sets}\).
+  \begin{enumerate}
+    \item \((|A|^{|B|})^{|C|}
+      = |A|^{|B|\cdot|C|}\)
+    \item \((|A|^{|B|})(|A|^{|C|})
+      = |A|^{|B|+|C|}\)
+  \end{enumerate}
+\end{prop}
+\ebox
+
+\bboxex
+\TB{Example.} Show that \(c\cdot c=c\).
+\[c\cdot c=(2^{\aleph_0})(2^{\aleph_0})
+=2^{\aleph_0+\aleph_0}=2^{\aleph_0}=c\]
 \ebox
 
 
