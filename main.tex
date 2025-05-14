@@ -534,6 +534,171 @@ Hence
 =2^{\aleph_0+\aleph_0}=2^{\aleph_0}=c\]
 \ebox
 
+% lecture 5
+
+
+\bboxproof
+\begin{proof}[Proof of 2.]
+  We must show
+  \[|\{f|f:B\cup C\to A\}|
+  =|\{f|f:B\cup A\}\times\{f|f:B\to A\}|\]
+  \[\T{Let }X:=\{f|f:B\to A\}\]
+  \[\T{Let }Y:=\{f|f:C\to A\}\]
+  \[\T{Let }Z:=\{f|f:B\cup C\to A\}\]
+  So, equivically we need to show \(|Z|=|X\times Y|\).
+  
+  Consider \(\varphi(f,g)(x)=\begin{cases}f(x)&x\in B\\ g(x)&y\in C\end{cases}\).
+  \[\varphi(f_1,g_1)=\varphi(f_2,g_2)\]
+  \[\implies\forall x\in B\cup C,\;
+  \varphi(f_1,g_1)(x)=\varphi(f_2,g_2)(x)\]
+  \[\implies\forall x\in B,\;f_1(x)=f_2(x)\implies f_1=f_2\]
+  \[\implies\forall x\in C,\;g_1(x)=g_2(x)\implies g_1=g_2\]
+
+  Consider \(h:B\cup C\to A\). Let \(f=h|_B,\;g=h|_C\). Then
+  \(\varphi(f,g)=h\).
+
+  So \(\varphi\) is bijective, so proposition 2 holds.
+\end{proof}
+\ebox
+
+
+\bboxex
+\TB{Example:} \(c^{\aleph_0}=(2^{\aleph_0})^{\aleph_0}
+=2^{\aleph_0\cdot\aleph_0}=2^{\aleph_0}=c\).
+\ebox
+
+\section{Topology}
+\subsection{Metric Spaces}
+
+\bbox
+\begin{defn}[Metric Space]\label{defn:metric_space}
+  \(X\is\TM{set}\). A metric on \(X\) is a function
+  \(d:X\times X\to[0,\infty)\st\)
+  \begin{enumerate}
+    \item \(d(x,y)=0\iff x=y\)
+    \item \TB{Abelian:} \(d(x,y)=d(y,x)\)
+    \item \TB{Triangle:} \(d(x,y)\le d(x,z)+d(z,y)\)
+  \end{enumerate}
+\end{defn}
+\ebox
+
+
+\bbox
+\begin{defn}[Normed Vector Space (NVS)]\label{defn:nvs}
+  Let \(V\is\TM{Vector\;Space}\) over \(\R\).
+  A norm on \(V\) is a fn \(\|\cdot\|:V\to[0,\infty)\st\)
+  \begin{enumerate}
+    \item \(\|v\|=0\iff v=\vec 0\)
+    \item \(\|\alpha v\|=|\alpha|\cdot\|v\|\)
+    \item \(\|v+u\|\le\|v\|+\|u\|\)
+  \end{enumerate}
+\end{defn}
+\ebox
+\bboxex
+\TB{BQN:} \(\|\times==|\circ l\cdot\|\circ r\quad\)\(|+\le\le+\Box|\)
+\ebox
+
+
+\bbox
+\begin{prop}[NVS have trivial Metrics]\label{prop:nvs_have_trivial_metrics}
+  Let \(V,\|\cdot\|\is\TM{NVS}\). \(d(v,w)=\|v-w\|\) is a metric on \(V\).
+\end{prop}
+\ebox
+
+\subsection{Examples of Metric Spaces}
+
+
+\bboxex
+\begin{exam}[Discrete Metric]\label{exam:discrete_metric}
+  \(X\is\TM{set}\).
+  \[
+    d(x,y)=\begin{cases}
+    0&x=y\\ 1&x\neq y\end{cases}
+  \]
+\end{exam}
+\ebox
+
+\bboxex
+\begin{exam}[Absolute Value Norm]\label{exam:absolute_value_norm}
+  \((\R,|\cdot|)\is\TM{NVS}\)
+\end{exam}
+\ebox
+
+
+\bboxex
+\begin{exam}[Euclidean Norm]\label{exam:euclidean_norm}
+  \((\R^n,\|\cdot\|_2)\is\TM{NVS}\) where \(\|x\|_2=\sqrt{\sum_{i=1}^n x_i^2}\).
+\end{exam}
+\ebox
+
+\bboxex
+\begin{exam}[P-Norm]\label{exam:p_norm}
+  \(p\ge 1,\;(\R^n,\|\cdot\|_p)\is\TM{NVS}\) where
+  \[\|x\|_p=\left(\sum_{i=1}^n|x_i|^p\right)^\frac1p\]
+  \bboxnote
+  \TB{Note:} see posted notes for the proof that this is a norm. OPTIONAL.
+  \ebox
+\end{exam}
+\ebox
+
+\bboxex
+\begin{exam}[Infinity Norm]\label{exam:infinity_norm}
+  \(p=\infty,\;(\R^n,\|\cdot\|_\infty)\is\TM{NVS}\) where
+  \[\|x\|_\infty=\TR{max}\{|x_1|,\dots,|x_n|\}\]
+\end{exam}
+\ebox
+
+\bboxex
+\begin{exam}[P-Norm on Sequences of Reals]\label{exam:p_norm_on_sequences_of_reals}
+  \(\R^\N:=\{f|f:\N\to\R\}=\{(a_n)_{n=1}^\infty:a_n\in\R\}\). For \(p\ge 1\),
+  \begin{equation}
+    \|x\|_p=\left(\sum_{n=1}^\infty|x_n|^p\right)^{\frac1p}
+  \end{equation}
+
+  \(l^p:=\{x\in\R:\|x\|_p<\infty\}\implies(l^p,\|\cdot\|_p)\is\TM{NVS}\). This
+  is the p-norm on sequences of reals. Notice how this solve the divergence
+  issue (by ignoring it lol).
+\end{exam}
+\ebox
+
+
+\bboxex
+\TB{Example:} \(l^1=\{x\in\R:\sum|x_i|<\infty\}\implies l^p\) is the set of
+absolutly convergent sequences.
+\ebox
+
+
+\bboxex
+\begin{exam}[Suprema Norm (Infinity Norm on Sequences of Reals)]\label{exam:suprema_norm}
+  \(\|x\|_\infty=\sup\{|x_n|:n\in\N\}\).
+
+  if we let \(l^\infty:=\{x\in\R^\N:\|x\|_\infty<\infty\}\), noting that
+  \(l^\infty\) is the set of all bounded sequences, then 
+  \((l^\infty,\|\cdot\|_\infty)\is\TM{NVS}\).
+\end{exam}
+\ebox
+
+\bboxex
+\begin{exam}[P-Norm on Function]\label{exam:p_norm_on_functions}
+  \(C([a,b]):=\{f:[a,b]\to\R|f\is\TM{cts}\}\).
+  \[\|f\|_p=\left(\int_a^b|f(x)|\md x\right)^{\frac1p},\;p\ge 1\]
+\end{exam}
+\ebox
+
+
+\bboxex
+\begin{exam}[Infinity Norm on Functions]\label{exam:infinity_norm_on_functions}
+  \(\|f\|_\infty=\sup\{|f(x)|:x\in[a,b]\}\) 
+\end{exam}
+\ebox
+
+
+\bbox
+\begin{exam}[Bounded Functions and the Infinity Norm are a NVS]\label{exam:bounded_functions_and_the_infinity_norm_are_a_nvs}
+  \(\B([a,b])=\{f:[a,b]\to\R|f\is\TM{bd}\}\), \((\B([a,b]),\|\cdot\|_\infty)\is\TM{NVS}\).
+\end{exam}
+\ebox
+
 
 % <++>
 \end{document}

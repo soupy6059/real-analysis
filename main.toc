@@ -25,3 +25,19 @@
 \contentsline {subsubsection}{{\it Proposition}: The Natural Powerset Cardinal is the Continuum Cardinal}{12}{prop.1.8}%
 \contentsline {subsection}{\numberline {1.5}Cardinal Arithmetic}{13}{subsection.1.5}%
 \contentsline {subsubsection}{{\it Proposition}: Cardinal Exponent Laws}{13}{prop.1.9}%
+\contentsline {section}{\numberline {2}Topology}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Metric Spaces}{14}{subsection.2.1}%
+\contentsline {subsubsection}{{\it Definition}: Metric Space}{14}{defn.2.1}%
+\contentsline {subsubsection}{{\it Definition}: Normed Vector Space (NVS)}{15}{defn.2.2}%
+\contentsline {subsubsection}{{\it Proposition}: NVS have trivial Metrics}{15}{prop.2.1}%
+\contentsline {subsection}{\numberline {2.2}Examples of Metric Spaces}{15}{subsection.2.2}%
+\contentsline {subsubsection}{{\it Example}: Discrete Metric}{15}{exam.2.1}%
+\contentsline {subsubsection}{{\it Example}: Absolute Value Norm}{15}{exam.2.2}%
+\contentsline {subsubsection}{{\it Example}: Euclidean Norm}{15}{exam.2.3}%
+\contentsline {subsubsection}{{\it Example}: P-Norm}{15}{exam.2.4}%
+\contentsline {subsubsection}{{\it Example}: Infinity Norm}{15}{exam.2.5}%
+\contentsline {subsubsection}{{\it Example}: P-Norm on Sequences of Reals}{16}{exam.2.6}%
+\contentsline {subsubsection}{{\it Example}: Suprema Norm (Infinity Norm on Sequences of Reals)}{16}{exam.2.7}%
+\contentsline {subsubsection}{{\it Example}: P-Norm on Function}{16}{exam.2.8}%
+\contentsline {subsubsection}{{\it Example}: Infinity Norm on Functions}{16}{exam.2.9}%
+\contentsline {subsubsection}{{\it Example}: Bounded Functions and the Infinity Norm are a NVS}{16}{exam.2.10}%
