@@ -693,9 +693,186 @@ absolutly convergent sequences.
 \ebox
 
 
-\bbox
+\bboxex
 \begin{exam}[Bounded Functions and the Infinity Norm are a NVS]\label{exam:bounded_functions_and_the_infinity_norm_are_a_nvs}
   \(\B([a,b])=\{f:[a,b]\to\R|f\is\TM{bd}\}\), \((\B([a,b]),\|\cdot\|_\infty)\is\TM{NVS}\).
+\end{exam}
+\ebox
+
+% lecture 6
+
+\bboxex
+\begin{exam}[Sequence Metric]
+  \(X=\R^\N=\{f|f:\N\to\R\}\). 
+  \[d(x,y)=\sum_{i=1}^\infty\frac{|x_i-y_i|}{2^i(1+|x_i-y_i|)}\]
+  \bboxproof
+  \begin{proof}[Prove that d isn't induced by a metric.]
+    If \(d(x,y)=\|x-y\|\) for some norm, then \(\|\alpha x-\alpha y\|
+    =|\alpha|\|x-y\|\).
+    \begin{align*}
+      d(ax,ay)&=\sum_{i=1}^\infty\frac{|ax_i-ay_i|}{2^i(1+|ax_i-ay_i|)}\\
+      d(ax,ay)&=\sum_{i=1}^\infty\frac{|a||x_i-y_i|}{2^i(1+|a||x_i-y_i|)}\\
+      |a|d(x,y)&=|a|\sum_{i=1}^\infty\frac{|x_i-y_i|}{2^i(1+|x_i-y_i|)}\\
+      |a|d(x,y)&=\sum_{i=1}^\infty\frac{|a||x_i-y_i|}{2^i(1+|x_i-y_i|)}\\
+      \T{b/c }|a||x_i-y_i|&\neq |x_i-y_i|\\
+                          &\implies\T{not induced by a norm}
+    \end{align*}
+  \end{proof}
+  \ebox
+\end{exam}
+\ebox
+
+\bboxex
+\begin{exam}[Cantor Space]\label{exam:cantor_space}
+  \(X=2^\N:=\{f|f:\N\to\{0,1\}\}\). 
+  \[d(x,y)=\sum_{i=1}^\infty\frac{|x_i-y_i|}{2^i}\]
+\end{exam}
+\ebox
+
+\bboxex
+\begin{exam}[Hamming Distance]\label{exam:hamming_distace}
+  \(X\is\TM{finite}\). \(A,B\in\PP(X)\). 
+  \[d(A,B):=|A\triangle B|=|(A\cup B)\backslash(A\cap B)|\]
+\end{exam}
+\ebox
+
+\bboxex
+\begin{exam}[Hausdorff Metric]
+  \(\HH=\{K\subseteq\R^n:K\T{ compact}\}\). Let 
+  \(a\in A,\;b\in B,\;A,B\in\HH\).
+  \[d(a,B)=\min\{\|a-b\|:b\in B\}\]
+  \[d(b,A)=\min\{\|a-b\|:a\in A\}\]
+  \[d(A,B)=\max\{\sup_{a\in A}d(a,B),\sup_{b\in B}d(b,A)\}\]
+
+  \bboxnote
+  \begin{note}
+    \(\sup_{a\in A}d(a,B)\) represents the biggest shortest path between
+    \(A\) and \(B\).
+  \end{note}
+  \ebox
+\end{exam}
+\ebox
+
+\bboxnote
+\begin{note}
+  Metrics give a sense of convergence on a space.
+\end{note}
+\ebox
+
+\bboxex
+\begin{exam}[P-adic Metric]
+  Let \(p\) be prime, \(X=\Q\).
+  \[\T{Let }0\neq q\in X=\Q\quad q=p^a\frac nm\]
+  \[\T{where }\gcd(n,m)=\gcd(p,n)=\gcd(p,m)=1\]
+  \[|q|_p=\frac1{p^a},\;|0|_p=0\]
+  \[d(q_1,q_2:=|q_1-q_2|_p\]
+  \bboxnote
+  \begin{note}
+    This notion of distance implies the more factors of p, the closer.
+
+    This gives a sense of optimizing for a certain adjective.
+
+    These numbers aren't close using \(\|\cdot\|_2\), but are using
+    the p-adic norm.
+  \end{note}
+  \ebox
+\end{exam}
+\ebox
+
+
+\bbox
+\begin{defn}[Subspace of a Metric Space]\label{defn:subspace_of_a_metric_space}
+  \((X,d),\;Y\subseteq X\implies(Y,d)\). \((Y,d)\) is called a 
+  \TB{subspace} of \((X,d)\).
+\end{defn}
+\ebox
+
+\bbox
+\begin{defn}
+  \((X,d_1),\;(Y,d_2)\). Consider \((X\times Y,d)\) with
+  \begin{align*}
+    d((x_1,y_1),(x_2,y_2))&:=d_1(x_1,x_2)+d_2(y_1,y_2)\ (\T{1-norm})\\
+    \T{or }d((x_1,y_1),(x_2,y_2))&:=\max\{d_1(x_1,x_2),d_2(y_1,y_2)\}\ (\infty\T{-norm})\\
+  \end{align*}
+\end{defn}
+\ebox
+
+\bboxex
+\begin{exam}[Product Metric]\label{exam:product_metric}
+  \((X_i,d_i)\;i\in\N\), \(X:=\prod_{n=1}^\infty X_i\). Let 
+  \(x=(x_1,x_2,\dots)\T{ and }y=(y_1,y_2,\dots)\).
+  \[d(x,y)=\sum_{i=1}^\infty\frac{d_i(x_i,y_i)}{2^i(1+d_i(x_i,y_i))}\]
+\end{exam}
+\ebox
+
+\subsection{Convergence}
+
+\bbox
+\begin{defn}[Convergence of a Sequence]\label{defn:convergence_of_a_sequence}
+  \((X,d),\;(x_n)\subseteq X\), and \(x\in X\).
+  \bboxnote
+  \begin{nota}
+    \((x_n)\subseteq X\) means \((x_n)\) is a sequence in \(X\). 
+  \end{nota}
+  \ebox
+  \[(x_n)\T{ conv to }x,\;x_n\to x\TB{ iff}\]
+  \[\forall\e>0,\;\exists N\in\N\st\forall n\ge N,\;d(x_n,x)<\e\]
+\end{defn}
+\ebox
+
+
+\bboxdefn
+\begin{defn}[Divergence]\label{defn:divergence}
+  \((x_n)\) diverges of \(\not\exists x\in X\st x_n\to x\).
+\end{defn}
+\ebox
+
+\bboxnote
+\begin{note}[Convergence is Distance going to Zero]
+  \((X,d),\;(x_n)\in X,\;x\in x\). Then \(x_n\to x\) \TB{iff}
+  \(d(x_n,x)\to 0\).
+\end{note}
+\ebox
+
+\bboxdefn
+\begin{defn}[Cauchy]
+  \((X,d)\). \((x_n)\subseteq X\) is a cauchy seq \TB{iff}
+  \[\forall\e>0,\;\exists N\in\N\st\forall n,m\ge N,\;
+  d(x_n,x_m)<\e\]
+\end{defn}
+\ebox
+
+
+\bboxprop
+\begin{prop}[Convergence implies Cauchyness]
+  \((X,d)\). If \((x_n)\subseteq X\) converges, then \((x_n)\) is cauchy.
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}[Epsilon/2]
+  Suppose \((x_n)\to x\). Let \(\e>0\). So \(\exists N\st\forall n\ge N\), 
+  \[d(x_n,x)<\gamma\]
+  \begin{align*}
+    d(x_n,x_m)&\le d(x_n,x)+d(x,x_m)\T{ by }\triangle\\
+              &<\gamma+\gamma=2\gamma\\
+              &:=2\frac\e2\\
+              &=\e
+  \end{align*}
+\end{proof}
+\ebox
+
+\bboxexam
+\begin{exam}[Cauchy doesn't imply Convergence]
+  \(X=(0,1]\) with the std metric.
+  \[\frac1n\to0\implies\left(\frac1n\right)\subseteq X\T{ is cauchy}\]
+  \bboxnote
+  \begin{note}
+    I think this is trying to say that 1/n is cauchy in X, but 
+    1/n \(\to\) 0, which is not in X, so it diverges (in X).
+  \end{note}
+  \ebox
+
 \end{exam}
 \ebox
 

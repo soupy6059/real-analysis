@@ -41,3 +41,17 @@
 \contentsline {subsubsection}{{\it Example}: P-Norm on Function}{16}{exam.2.8}%
 \contentsline {subsubsection}{{\it Example}: Infinity Norm on Functions}{16}{exam.2.9}%
 \contentsline {subsubsection}{{\it Example}: Bounded Functions and the Infinity Norm are a NVS}{16}{exam.2.10}%
+\contentsline {subsubsection}{{\it Example}: Sequence Metric}{17}{exam.2.11}%
+\contentsline {subsubsection}{{\it Example}: Cantor Space}{17}{exam.2.12}%
+\contentsline {subsubsection}{{\it Example}: Hamming Distance}{17}{exam.2.13}%
+\contentsline {subsubsection}{{\it Example}: Hausdorff Metric}{18}{exam.2.14}%
+\contentsline {subsubsection}{{\it Example}: P-adic Metric}{18}{exam.2.15}%
+\contentsline {subsubsection}{{\it Definition}: Subspace of a Metric Space}{18}{defn.2.3}%
+\contentsline {subsubsection}{{\it Example}: Product Metric}{19}{exam.2.16}%
+\contentsline {subsection}{\numberline {2.3}Convergence}{19}{subsection.2.3}%
+\contentsline {subsubsection}{{\it Definition}: Convergence of a Sequence}{19}{defn.2.5}%
+\contentsline {subsubsection}{{\it Definition}: Divergence}{19}{defn.2.6}%
+\contentsline {subsubsection}{{\it Note}: Convergence is Distance going to Zero}{19}{note.2.4}%
+\contentsline {subsubsection}{{\it Definition}: Cauchy}{19}{defn.2.7}%
+\contentsline {subsubsection}{{\it Proposition}: Convergence implies Cauchyness}{19}{prop.2.2}%
+\contentsline {subsubsection}{{\it Example}: Cauchy doesn't imply Convergence}{20}{exam.2.17}%
