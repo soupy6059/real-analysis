@@ -1,57 +1,70 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Cardinality}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Brief Motivation}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Function Theory}{3}{subsection.1.2}%
-\contentsline {subsubsection}{{\it Definition}: Injection}{3}{defn.1.1}%
-\contentsline {subsubsection}{{\it Definition}: Surjection}{3}{defn.1.2}%
-\contentsline {subsubsection}{{\it Definition}: Bijective}{3}{defn.1.3}%
-\contentsline {subsubsection}{{\it Definition}: Invertable}{3}{defn.1.4}%
-\contentsline {subsubsection}{{\it Definition}: Powerset}{5}{defn.1.5}%
-\contentsline {subsubsection}{{\it Axiom}: Choice}{5}{axim.1.1}%
-\contentsline {subsection}{\numberline {1.3}Cardinality}{6}{subsection.1.3}%
-\contentsline {subsubsection}{{\it Definition}: Ordering of Cardinality on Sets}{6}{defn.1.6}%
-\contentsline {subsubsection}{{\it Theorem}: Cantor-Schroeder-Berstien (CSB)}{6}{thm.1.1}%
-\contentsline {subsubsection}{{\it Lemma}: Phi has a Fixed Point}{6}{lem.1.1}%
-\contentsline {subsubsection}{{\it Definition}: Finite, Countably Infinite, Countable}{9}{defn.1.7}%
-\contentsline {subsubsection}{{\it Proposition}: Aleph Null is the Smallest Infinity}{9}{prop.1.3}%
-\contentsline {subsubsection}{{\it Proposition}: The Reals are Uncountable}{10}{prop.1.4}%
-\contentsline {subsubsection}{{\it Definition}: Continuum}{10}{defn.1.8}%
-\contentsline {subsubsection}{{\it Axiom}: Continuum Hypothesis}{10}{axim.1.2}%
-\contentsline {subsection}{\numberline {1.4}Cardinality of Power Sets}{10}{subsection.1.4}%
-\contentsline {subsubsection}{{\it Definition}: Cartesian Product}{11}{defn.1.9}%
-\contentsline {subsubsection}{{\it Definition}: Set Power}{11}{defn.1.10}%
-\contentsline {subsubsection}{{\it Proposition}: Cardinality of a Power Set}{11}{prop.1.6}%
-\contentsline {subsubsection}{{\it Proposition}: The Powerset is Larger than the Set}{12}{prop.1.7}%
-\contentsline {subsubsection}{{\it Proposition}: The Natural Powerset Cardinal is the Continuum Cardinal}{12}{prop.1.8}%
-\contentsline {subsection}{\numberline {1.5}Cardinal Arithmetic}{13}{subsection.1.5}%
-\contentsline {subsubsection}{{\it Proposition}: Cardinal Exponent Laws}{13}{prop.1.9}%
-\contentsline {section}{\numberline {2}Topology}{14}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Metric Spaces}{14}{subsection.2.1}%
-\contentsline {subsubsection}{{\it Definition}: Metric Space}{14}{defn.2.1}%
-\contentsline {subsubsection}{{\it Definition}: Normed Vector Space (NVS)}{15}{defn.2.2}%
-\contentsline {subsubsection}{{\it Proposition}: NVS have trivial Metrics}{15}{prop.2.1}%
-\contentsline {subsection}{\numberline {2.2}Examples of Metric Spaces}{15}{subsection.2.2}%
-\contentsline {subsubsection}{{\it Example}: Discrete Metric}{15}{exam.2.1}%
-\contentsline {subsubsection}{{\it Example}: Absolute Value Norm}{15}{exam.2.2}%
-\contentsline {subsubsection}{{\it Example}: Euclidean Norm}{15}{exam.2.3}%
-\contentsline {subsubsection}{{\it Example}: P-Norm}{15}{exam.2.4}%
-\contentsline {subsubsection}{{\it Example}: Infinity Norm}{15}{exam.2.5}%
-\contentsline {subsubsection}{{\it Example}: P-Norm on Sequences of Reals}{16}{exam.2.6}%
-\contentsline {subsubsection}{{\it Example}: Suprema Norm (Infinity Norm on Sequences of Reals)}{16}{exam.2.7}%
-\contentsline {subsubsection}{{\it Example}: P-Norm on Function}{16}{exam.2.8}%
-\contentsline {subsubsection}{{\it Example}: Infinity Norm on Functions}{16}{exam.2.9}%
-\contentsline {subsubsection}{{\it Example}: Bounded Functions and the Infinity Norm are a NVS}{16}{exam.2.10}%
-\contentsline {subsubsection}{{\it Example}: Sequence Metric}{17}{exam.2.11}%
-\contentsline {subsubsection}{{\it Example}: Cantor Space}{17}{exam.2.12}%
-\contentsline {subsubsection}{{\it Example}: Hamming Distance}{17}{exam.2.13}%
-\contentsline {subsubsection}{{\it Example}: Hausdorff Metric}{18}{exam.2.14}%
-\contentsline {subsubsection}{{\it Example}: P-adic Metric}{18}{exam.2.15}%
-\contentsline {subsubsection}{{\it Definition}: Subspace of a Metric Space}{18}{defn.2.3}%
-\contentsline {subsubsection}{{\it Example}: Product Metric}{19}{exam.2.16}%
-\contentsline {subsection}{\numberline {2.3}Convergence}{19}{subsection.2.3}%
-\contentsline {subsubsection}{{\it Definition}: Convergence of a Sequence}{19}{defn.2.5}%
-\contentsline {subsubsection}{{\it Definition}: Divergence}{19}{defn.2.6}%
-\contentsline {subsubsection}{{\it Note}: Convergence is Distance going to Zero}{19}{note.2.4}%
-\contentsline {subsubsection}{{\it Definition}: Cauchy}{19}{defn.2.7}%
-\contentsline {subsubsection}{{\it Proposition}: Convergence implies Cauchyness}{19}{prop.2.2}%
-\contentsline {subsubsection}{{\it Example}: Cauchy doesn't imply Convergence}{20}{exam.2.17}%
+\contentsline {section}{\numberline {1}Cardinality}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Brief Motivation}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Function Theory}{4}{subsection.1.2}%
+\contentsline {subsubsection}{{\it Definition}: Injection}{4}{defn.1.1}%
+\contentsline {subsubsection}{{\it Definition}: Surjection}{4}{defn.1.2}%
+\contentsline {subsubsection}{{\it Definition}: Bijective}{4}{defn.1.3}%
+\contentsline {subsubsection}{{\it Definition}: Invertable}{4}{defn.1.4}%
+\contentsline {subsubsection}{{\it Definition}: Powerset}{6}{defn.1.5}%
+\contentsline {subsubsection}{{\it Axiom}: Choice}{6}{axim.1.1}%
+\contentsline {subsection}{\numberline {1.3}Cardinality}{7}{subsection.1.3}%
+\contentsline {subsubsection}{{\it Definition}: Ordering of Cardinality on Sets}{7}{defn.1.6}%
+\contentsline {subsubsection}{{\it Theorem}: Cantor-Schroeder-Berstien (CSB)}{7}{thm.1.1}%
+\contentsline {subsubsection}{{\it Lemma}: Phi has a Fixed Point}{7}{lem.1.1}%
+\contentsline {subsubsection}{{\it Definition}: Finite, Countably Infinite, Countable}{10}{defn.1.7}%
+\contentsline {subsubsection}{{\it Proposition}: Aleph Null is the Smallest Infinity}{10}{prop.1.3}%
+\contentsline {subsubsection}{{\it Proposition}: The Reals are Uncountable}{11}{prop.1.4}%
+\contentsline {subsubsection}{{\it Definition}: Continuum}{11}{defn.1.8}%
+\contentsline {subsubsection}{{\it Axiom}: Continuum Hypothesis}{11}{axim.1.2}%
+\contentsline {subsection}{\numberline {1.4}Cardinality of Power Sets}{11}{subsection.1.4}%
+\contentsline {subsubsection}{{\it Definition}: Cartesian Product}{12}{defn.1.9}%
+\contentsline {subsubsection}{{\it Definition}: Set Power}{12}{defn.1.10}%
+\contentsline {subsubsection}{{\it Proposition}: Cardinality of a Power Set}{12}{prop.1.6}%
+\contentsline {subsubsection}{{\it Proposition}: The Powerset is Larger than the Set}{13}{prop.1.7}%
+\contentsline {subsubsection}{{\it Proposition}: The Natural Powerset Cardinal is the Continuum Cardinal}{13}{prop.1.8}%
+\contentsline {subsection}{\numberline {1.5}Cardinal Arithmetic}{14}{subsection.1.5}%
+\contentsline {subsubsection}{{\it Proposition}: Cardinal Exponent Laws}{14}{prop.1.9}%
+\contentsline {section}{\numberline {2}Topology}{15}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Metric Spaces}{15}{subsection.2.1}%
+\contentsline {subsubsection}{{\it Definition}: Metric Space}{15}{defn.2.1}%
+\contentsline {subsubsection}{{\it Definition}: Normed Vector Space (NVS)}{16}{defn.2.2}%
+\contentsline {subsubsection}{{\it Proposition}: NVS have trivial Metrics}{16}{prop.2.1}%
+\contentsline {subsection}{\numberline {2.2}Examples of Metric Spaces}{16}{subsection.2.2}%
+\contentsline {subsubsection}{{\it Example}: Discrete Metric}{16}{exam.2.1}%
+\contentsline {subsubsection}{{\it Example}: Absolute Value Norm}{16}{exam.2.2}%
+\contentsline {subsubsection}{{\it Example}: Euclidean Norm}{16}{exam.2.3}%
+\contentsline {subsubsection}{{\it Example}: P-Norm}{16}{exam.2.4}%
+\contentsline {subsubsection}{{\it Example}: Infinity Norm}{16}{exam.2.5}%
+\contentsline {subsubsection}{{\it Example}: P-Norm on Sequences of Reals}{17}{exam.2.6}%
+\contentsline {subsubsection}{{\it Example}: Suprema Norm (Infinity Norm on Sequences of Reals)}{17}{exam.2.7}%
+\contentsline {subsubsection}{{\it Example}: P-Norm on Function}{17}{exam.2.8}%
+\contentsline {subsubsection}{{\it Example}: Infinity Norm on Functions}{17}{exam.2.9}%
+\contentsline {subsubsection}{{\it Example}: Bounded Functions and the Infinity Norm are a NVS}{17}{exam.2.10}%
+\contentsline {subsubsection}{{\it Example}: Sequence Metric}{18}{exam.2.11}%
+\contentsline {subsubsection}{{\it Example}: Cantor Space}{18}{exam.2.12}%
+\contentsline {subsubsection}{{\it Example}: Hamming Distance}{18}{exam.2.13}%
+\contentsline {subsubsection}{{\it Example}: Hausdorff Metric}{19}{exam.2.14}%
+\contentsline {subsubsection}{{\it Example}: P-adic Metric}{19}{exam.2.15}%
+\contentsline {subsubsection}{{\it Definition}: Subspace of a Metric Space}{19}{defn.2.3}%
+\contentsline {subsubsection}{{\it Example}: Product Metric}{20}{exam.2.16}%
+\contentsline {subsection}{\numberline {2.3}Convergence}{20}{subsection.2.3}%
+\contentsline {subsubsection}{{\it Definition}: Convergence of a Sequence}{20}{defn.2.5}%
+\contentsline {subsubsection}{{\it Definition}: Divergence}{20}{defn.2.6}%
+\contentsline {subsubsection}{{\it Note}: Convergence is Distance going to Zero}{20}{note.2.4}%
+\contentsline {subsubsection}{{\it Definition}: Cauchy}{20}{defn.2.7}%
+\contentsline {subsubsection}{{\it Proposition}: Convergence implies Cauchyness}{20}{prop.2.2}%
+\contentsline {subsubsection}{{\it Example}: Cauchy doesn't imply Convergence}{21}{exam.2.17}%
+\contentsline {subsubsection}{{\it Definition}: Bounded}{21}{defn.2.8}%
+\contentsline {subsubsection}{{\it Definition}: Open and Closed Balls}{21}{defn.2.9}%
+\contentsline {subsubsection}{{\it Proposition}: Boundedness iff subset of a Closed Ball}{21}{prop.2.3}%
+\contentsline {subsubsection}{{\it Proposition}: Cauchy implies Bounded}{22}{prop.2.4}%
+\contentsline {subsubsection}{{\it Example}: Counter Example}{22}{exam.2.18}%
+\contentsline {subsection}{\numberline {2.4}Examples}{23}{subsection.2.4}%
+\contentsline {subsubsection}{{\it Example}: 2-Adic Norm}{23}{exam.2.19}%
+\contentsline {subsubsection}{{\it Note}: P-Adic Convergence Claims}{23}{note.2.8}%
+\contentsline {subsubsection}{{\it Example}: Bounded Sequences and the Infinity Norm}{23}{exam.2.20}%
+\contentsline {subsubsection}{{\it Example}: Zero Tailed Sequences aren't Cauchy under Sup Norm}{23}{exam.2.21}%
+\contentsline {subsection}{\numberline {2.5}Completeness}{24}{subsection.2.5}%
+\contentsline {subsubsection}{{\it Definition}: Complete, Complete Metric Space, Banach Space}{24}{defn.2.10}%
+\contentsline {subsubsection}{{\it Proposition}: Set of bounded Sequences on the P-Norm is Banach}{25}{prop.2.5}%

@@ -876,6 +876,313 @@ absolutly convergent sequences.
 \end{exam}
 \ebox
 
+% lecture 7
+
+
+\bboxdefn
+\begin{defn}[Bounded]\ \label{defn:bounded}
+    \begin{enumerate}
+        \item \(A\subseteq X\) is bd \TU{iff}
+            \(\sup\{d(x,y):x,y\in A\}<\infty\)
+        \item \((x_n)\subseteq X\is\TM{bd}\iff\{x_1,x_2,\dots\}\is\TM{bd}
+            \iff\sup\{n,m\in\N:d(x_n,x_m)\}<\infty\)
+    \end{enumerate}
+\end{defn}
+\ebox
+
+\bboxdefn
+\begin{defn}[Open and Closed Balls]\ \label{defn:open_clsd_balls}
+    \begin{enumerate}
+        \item \TB{Open:} \(B_r(a):=\{x\in X:d(x,a)<r\}\)
+        \item \TB{Clsd:} \(B_r[a]:=\{x\in X:d(x,a)\le r\}\)
+    \end{enumerate}
+\end{defn}
+\ebox
+
+
+\bboxprop
+\begin{prop}[Boundedness iff subset of a Closed Ball]\label{prop:bounded_iff_subset_of_closed_ball}
+    \((X,d),\;A\subseteq X\). Then \(A\) is bd \TU{iff}
+    \(\exists r>0,\;\exists x\in X\st A\subseteq B_r[x]\)
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+    Suppose \(\sup\{d(x,y):x,y\in A\}=r<\infty\). Assume \(A\neq\emptyset\), taking \(a\in A\).
+    For \(b\in A\), \(d(a,b)\le r\implies A\subseteq B_r[a]\).
+
+    Assume \(A\subseteq B_r[a]\implies\forall a,b\in A,\;
+    d(a,b)\le d(a,x)+d(x,b)\le 2r\)
+\end{proof}
+\ebox
+
+\bboxprop
+\begin{prop}[Cauchy implies Bounded]\label{prop:cauchy_implies_bounded}
+    \((x_n)\is\TM{cauchy}\implies(x_n)\is\TM{bd}\)
+\end{prop}
+\ebox
+
+\bboxexam
+\begin{exam}[Counter Example]
+    \((0,1,0,1,0,\dots)\) is bounded but not cauchy.
+\end{exam}
+\ebox
+
+\bboxnote
+\begin{note}
+    CONVERGENCE \(\implies\) CAUCHY \(\implies\) BOUNDED
+\end{note}
+\ebox
+
+
+\bboxproof
+\begin{proof}
+    Suppose \((x_n)\) is cauchy.
+    Let \(\e=1\).
+    \[\exists N\in\N\st
+    \forall n,m\ge N\;
+    d(x_n,x_m)<1\]
+    Let \(r:=\TR{max}\{d(x_1,x_N),\dots,d(x_{N-1},x_N)\}\)
+    \bboxnote
+    \begin{note}
+        We did this because the web's edges are no longer than 1. So, we can look at the 
+        \TU{finite} part left. Finite sets are bounded, and the "web" is bounded.
+    \end{note}
+    \ebox
+    \[(x_n)\subseteq B_r[x_N]\]
+\end{proof}
+\ebox
+
+\subsection{Examples}
+
+
+\bboxexam
+\begin{exam}[2-Adic Norm]
+    Consider \((\Q,|\cdot|_2)\). Let \(x_n:=\frac{1+2^n}3\).
+    \bboxnote
+    \begin{note}[P-Adic Convergence Claims]
+        Looking at \(x_n=\frac13+\frac{2^n}3=\frac13+\cancelto0{\frac{2^n}3}=\frac13\).
+    \end{note}
+    \ebox
+    We claim \(x_n\to\frac13\).
+    \bboxproof
+    \begin{proof}\
+        \begin{align*}
+            \left|x_n-\frac13\right|_2&=\left|\frac{2^n}3\right|_2\\
+                           &=\frac1{2^n}\\
+                           &\to 0
+        \end{align*}
+        So \(x_n\to\frac13\) under \(|\cdot|_2\).
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}[Bounded Sequences and the Infinity Norm]
+    \((l^\infty,\|\cdot\|_\infty)\).
+
+    Let \(x_n:=\left(1,\frac12,\frac13,\dots,\frac1n,0,0,0,\dots\right)\) and
+    \(x:=\left(1,\frac12,\frac13,\dots\right)\)
+
+    We claim that \(x_n\to x\).
+    \bboxproof
+    \begin{proof}
+        \[\|x_n-x\|_\infty\]
+        \[=\sup\left(0,0,\dots,0,\frac1{n+1},\frac1{n+2},\dots\right)\]
+        \[=\frac1{n+1}\to0\]
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}[Zero Tailed Sequences aren't Cauchy under Sup Norm]\
+    \[y_n:=(\underset n{\underbrace{1,1,\dots,1}},0,0,0,\dots)\]
+    \[y:=(1,1,1,1,\dots)\]
+    \[n\neq m,\;
+    \|y_n-y_m\|_\infty=1\]
+\end{exam}
+\ebox
+
+\subsection{Completeness}
+
+
+\bboxdefn
+\begin{defn}[Complete, Complete Metric Space, Banach Space]\label{defn:complete_complete_metric_banach}
+    \((X,d),\;A\subseteq X\). Then 
+    \begin{enumerate}
+        \item \(A\) is \TB{complete} \TU{iff} every cauchy seq in \(A\) 
+            converges to some \(a\in A\).
+        \item if \(X\) is complete, we call it a \TB{Complete Metric Space}.
+        \item A complete normed vector space is called a \TB{Banach Space}
+    \end{enumerate}
+\end{defn}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \[X=(0,1],\;\frac1n\to0\not\in X\implies\TM{div}\implies X\not\is\TM{comp}\]
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \[
+        A=[1/2,1]\subseteq X\is\TM{comp}
+    \]
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \((X,d:=\TM{discrete})\) Let \((x_n)\in\R^\N\) be cauchy.
+    \[\exists N\in\N\st\forall n,m\ge N\implies d(x_n,x_m)<1\]
+    \[\implies d(x_n,x_m)=0\]
+    \[\implies x_n=x_m\]
+    \[\implies x_n=(x_1,x_2,\dots,x_N,x_N,x_N,\dots)\to x_N\]
+    \[\implies X\is\TM{complete}\]
+\end{exam}
+\ebox
+
+\bboxnote
+\begin{note}
+    So nice sets or nice metrics can cause completeness.
+\end{note}
+\ebox
+
+\bboxexam
+\begin{exam}
+    Show \((l^\infty,\|\cdot\|_\infty)\) is a Banach Space.
+
+    Let \((x_n)\subseteq l^\infty\), \cref{exam:suprema_norm}. We know already
+    that \((l^\infty,\|\cdot\|_\infty)\) is a (NVS), so we have to
+    show it's complete. Let \(\e>0\) be given. Then,
+    \[\exists N\in\N\st n,m\ge N\implies\|x_n-x_m\|_\infty<\e\]
+    \[x_k=(x_k[1],x_k[2],\dots)\]
+    \[\T{for }n,m\ge N,\;|x_n[i]-x_m[i]|\]
+    \[\le\sup\{|x_n[i]-x_m[i]|:i\in\N\}\]
+    \[=\|x_n-x_m\|_\infty<\e\]
+    \[\implies\forall i\in\N,\;\T{the seq }(x_n[i])_{n=1}^\infty\is\TM{cauchy\ in\ \R}\]
+    \[\R\is\TM{comp}\implies x_n[i]\underset n\to b_i\]
+    \[\T{Claim: }x_n\to b:=(b_1,b_2,\dots)\]
+    \[
+        \forall n,m\ge N,\;
+        |x_n[i]-x_m[i]|<\e
+    \]
+    \[
+        \implies\lim_{m\to\infty}|x_n[i]-x_m[i]|\le\e
+    \]
+    \[
+        \implies\forall n\ge N,\;
+        |x_n[i]-b_i|\le\e
+    \]
+    \[
+        \T{Consider }\|x_n-b\|_\infty
+    \]
+    \[
+        =\sup\{
+            |x_n[i]-b_i|:i\in\N
+        \}
+    \]
+    \[
+        \le\e<2\e
+    \]
+    Hence \(x_n\to b\).
+
+    \TB{Note:} we have that \(x_N-b\in l^\infty\), and \(x_N\in l^\infty\). However
+    \(l^\infty\) is a (VS), so \(b\in l^\infty\).
+\end{exam}
+\ebox
+
+
+\bboxprop
+\begin{prop}[Set of bounded Sequences on the P-Norm is Banach]
+    \((\ell^p,\|\cdot\|_p)\is\TM{banach}\).
+    \[
+        \|x\|_p=\left(\sum_{n=1}^\infty|x_n|^p\right)^{\frac1p}
+    \]
+    \[
+        \ell^p:=\{x\in\R:\|x\|_p<\infty\}\implies(\ell^p,\|\cdot\|_p)\is\TM{NVS}
+    \]
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+    Let \((a_k)\subseteq\ell^p\) be cauchy.
+    \[
+        \T{Say }a_k=(a_k[1],a_k[2],\dots)
+    \]
+    \[
+        \T{Let }\e>0
+    \]
+    \[
+        \exists N\in\N\st\|a_k-a_m\|<\e,\;
+        \forall k,m\ge N
+    \]
+    \[
+        \T{Fixing }i\in\N,\;
+        \T{Since }|a_k[i]-a_m[i]|\le\|a_k-a_m\|_p<\e
+    \]
+    \[
+        \T{We see that }(a_k[i])_{k=1}^\infty\is\TM{cauchy\ in\ \R}
+    \]
+    \[
+        \R\is\TM{comp}\implies a_k[i]\to b_i\T{ for some }b_i\in\R
+    \]
+    \[
+        \T{Claim: }a_k\to b=(b_1,b_2,\dots)
+    \]
+    \[
+        \forall k,m\ge N,\T{ we see that}
+    \]
+    \[
+        \sum_{i=1}^M|a_k[i]-a_m[i]|^p
+    \]
+    \[
+        \le\sum_{i=1}^\infty|a_k[i]-a_m[i]|^p
+    \]
+    \[
+        =\|a_k-a_m\|_p^p<\e^p
+    \]
+    \[
+        \sum^M_{i=1}|a_k[i]-b_i|^p\le\e^p,\;\forall M\in\N
+    \]
+    \[
+        M\to\infty:\sum_{i=1}^\infty|a_k[i]=b_i|^p\le\e^p
+    \]
+    \[
+        \implies\|a_k-b\|_p\le\e,\;\forall k\ge N
+    \]
+
+    Noting that \(a_N,a_N-b\in\ell^p\implies b\in\ell^p\).
+\end{proof}
+\ebox
+
+\bboxexam
+\begin{exam}\
+    \[
+        C_{00}=\{(x_n)\in\ell^\infty:\exists N\in\N\st\forall n\ge N,\;x_n=0\}
+    \]
+    \[
+        \is\TM{NVS},\;\T{via }\|\cdot\|_\infty
+    \]
+
+    Consider
+    \[
+        x_n=(1,1/2,\dots,1/n,0,0,0,\dots)
+    \]
+    \[
+        x_n\is\TM{cauchy,\ divergence}\T{ b/c}
+    \]
+    \[
+        x_n\to(1,1/2,1/3,\dots)\not\in C_{00}\implies C_{00}\is\TM{\neg comp}
+    \]
+\end{exam}
+\ebox
+
 
 % <++>
 \end{document}
