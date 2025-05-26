@@ -109,12 +109,6 @@
 
 
 \NewDocumentCommand{\sff}{}{\mathrm{I\!I}}
-\newcommand{\R}{\mathbb R}
-\newcommand{\C}{\mathbb C}
-\newcommand{\N}{\mathbb N}
-\newcommand{\Q}{\mathbb Q}
-\newcommand{\Z}{\mathbb Z}
-\newcommand{\B}{\mathbb B}
 
 \newcommand{\mat}[2][bmatrix]{
     \begin{#1} #2 \end{#1}
@@ -123,21 +117,32 @@
 \newcommand{\inn}[1]{\left\langle #1\right\rangle}
 
 \newcommand{\T}[1]{\text{#1}}
-
 \newcommand{\TI}[1]{\textit{#1}}
-
 \newcommand{\TB}[1]{\textbf{#1}}
-
 \newcommand{\TU}[1]{\text{\underline{#1}}}
-
 \newcommand{\TM}[1]{(\mathrm{#1})}
 \newcommand{\TR}[1]{\mathrm{#1}}
 
+% operator
 \newcommand{\st}{\T{ s/t }}
 \newcommand{\ot}{\leftarrow}
 \newcommand{\limplies}{\Longleftarrow}
-\newcommand{\is}{\leftharpoonup}
+\newcommand{\is}{\ \mathrm{is}\ }
 \newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\opand}{\mathbin{\&}}
+\newcommand{\unin}{\cup}
+\newcommand{\bigunin}{\bigcup}
+\newcommand{\intr}{\cap}
+\newcommand{\bigintr}{\bigcap}
+\newcommand{\smin}{\smallsetminus}
+\newcommand{\ssq}{\subseteq}
+\newcommand{\sss}{\subset}
+\newcommand{\tthen}{\ \mathrm{then}\ }
+\newcommand{\iif}{\ \mathrm{if}\ }
+\newcommand{\llet}{\ \mathrm{let}\ }
+\newcommand{\cls}[1]{\overline{#1}}
+\newcommand{\interior}{\mathrm{Int}}
+
 
 \newcommand{\mycornmat}[5][bmatrix]{
     \begin{#1}
@@ -154,15 +159,28 @@
 \newcommand{\cts}{\mathrm{cnts}}
 \newcommand{\nbhd}{\mathrm{nbhd}}
 \newcommand{\open}{\mathrm{open}}
-\newcommand{\spc}{\T{ }}
 \newcommand{\md}{\,\mathrm{d}}
+
+% Greek Aliases
 \newcommand{\e}{\epsilon}
 \newcommand{\de}{\delta}
 \newcommand{\al}{\alpha}
 \newcommand{\be}{\beta}
 \newcommand{\om}{\Omega}
+\newcommand{\vphi}{\varphi}
+
+% Alternative Spaces
 \newcommand{\PP}{\mathcal P}
 \newcommand{\XX}{\mathcal X}
 \newcommand{\QQ}{\mathcal Q}
 \newcommand{\HH}{\mathcal H}
+\newcommand{\TT}{\mathcal T}
+
+% Spaces
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\B}{\mathbb B}
 

@@ -60,7 +60,7 @@
 \contentsline {subsubsection}{{\it Proposition}: Boundedness iff subset of a Closed Ball}{21}{prop.2.3}%
 \contentsline {subsubsection}{{\it Proposition}: Cauchy implies Bounded}{22}{prop.2.4}%
 \contentsline {subsubsection}{{\it Example}: Counter Example}{22}{exam.2.18}%
-\contentsline {subsection}{\numberline {2.4}Examples}{23}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Convergence Examples}{23}{subsection.2.4}%
 \contentsline {subsubsection}{{\it Example}: 2-Adic Norm}{23}{exam.2.19}%
 \contentsline {subsubsection}{{\it Note}: P-Adic Convergence Claims}{23}{note.2.8}%
 \contentsline {subsubsection}{{\it Example}: Bounded Sequences and the Infinity Norm}{23}{exam.2.20}%
@@ -68,3 +68,29 @@
 \contentsline {subsection}{\numberline {2.5}Completeness}{24}{subsection.2.5}%
 \contentsline {subsubsection}{{\it Definition}: Complete, Complete Metric Space, Banach Space}{24}{defn.2.10}%
 \contentsline {subsubsection}{{\it Proposition}: Set of bounded Sequences on the P-Norm is Banach}{25}{prop.2.5}%
+\contentsline {subsection}{\numberline {2.6}Topological Spaces}{27}{subsection.2.6}%
+\contentsline {subsubsection}{{\it Definition}: Topology}{27}{defn.2.11}%
+\contentsline {subsubsection}{{\it Example}: Discrete Topology}{27}{exam.2.27}%
+\contentsline {subsubsection}{{\it Example}: Indiscrete Topology}{27}{exam.2.28}%
+\contentsline {subsubsection}{{\it Notation}: Topological Space}{27}{nota.2.2}%
+\contentsline {subsection}{\numberline {2.7}Metric Topology}{27}{subsection.2.7}%
+\contentsline {subsubsection}{{\it Definition}: Open}{27}{defn.2.12}%
+\contentsline {subsubsection}{{\it Proposition}: The Set of Open sets form a Topology}{28}{prop.2.6}%
+\contentsline {subsubsection}{{\it Example}: Counterexample for Infinte Intersections are Open}{28}{exam.2.30}%
+\contentsline {subsubsection}{{\it Proposition}: Metric Spaces are Haussdorff}{28}{prop.2.7}%
+\contentsline {subsection}{\numberline {2.8}Closed Sets}{29}{subsection.2.8}%
+\contentsline {subsubsection}{{\it Definition}: Closed Sets}{29}{defn.2.13}%
+\contentsline {subsubsection}{{\it Proposition}: Properties of Closed Sets}{29}{prop.2.8}%
+\contentsline {subsubsection}{{\it Definition}: Limit Point}{30}{defn.2.14}%
+\contentsline {subsubsection}{{\it Proposition}: Limits Points in a Metric Topology are the Limit of a Sequence}{30}{prop.2.9}%
+\contentsline {subsubsection}{{\it Proposition}: Closed Sets Attain Limits}{30}{prop.2.10}%
+\contentsline {subsubsection}{{\it Corollary}: Closed Sets Attain Sequence Limits}{31}{coro.2.1}%
+\contentsline {subsubsection}{{\it Definition}: Subspace Topology}{32}{defn.2.15}%
+\contentsline {subsection}{\numberline {2.9}Closure and Interior}{33}{subsection.2.9}%
+\contentsline {subsubsection}{{\it Definition}: Closure and Interior}{33}{defn.2.16}%
+\contentsline {subsubsection}{{\it Proposition}: The Closure is the Set of Limit Points}{34}{prop.2.11}%
+\contentsline {subsubsection}{{\it Note}: Norms}{35}{note.2.15}%
+\contentsline {subsubsection}{{\it Corollary}: Closure is the Set of Reachable Points}{35}{coro.2.2}%
+\contentsline {subsubsection}{{\it Definition}: Interior Points}{35}{defn.2.17}%
+\contentsline {subsubsection}{{\it Proposition}: Interior Points of A build the Interior of A}{36}{prop.2.12}%
+\contentsline {subsubsection}{{\it Example}: Closures and Closed ``Versions'' of Sets are Inequal}{36}{exam.2.32}%

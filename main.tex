@@ -954,7 +954,7 @@ absolutly convergent sequences.
 \end{proof}
 \ebox
 
-\subsection{Examples}
+\subsection{Convergence Examples}
 
 
 \bboxexam
@@ -1181,6 +1181,641 @@ absolutly convergent sequences.
         x_n\to(1,1/2,1/3,\dots)\not\in C_{00}\implies C_{00}\is\TM{\neg comp}
     \]
 \end{exam}
+\ebox
+
+% lecture 8
+\subsection{Topological Spaces}
+
+
+\bboxdefn
+\begin{defn}[Topology]
+    \(X\) set. A \TB{topology} on \(X\) is a set \(\TT\subseteq\PP(X)\) s/t
+    \begin{enumerate}
+        \item \(\emptyset,X\in\TT\)
+        \item \(U,V\in\TT\implies U\cap V\in\TT\)
+        \item \(U_i\in\TT,\;(i\in I)\implies\bigcup_{i\in I}U_i\in\TT\)
+    \end{enumerate}
+\end{defn}
+\ebox
+
+\bboxexam
+\begin{exam}[Discrete Topology]
+    \(X\) set. \(\TT:=\PP(X)\)
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}[Indiscrete Topology]
+    \(\TT:=\{\emptyset,X\}\)
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \(X=\{a,b,c\}\)
+    \[
+        \TT_1=\{\emptyset,X,\{a\},\{b,c\}\}
+    \]
+    \[
+        \TT_2=\{\emptyset,X,\{a\},\{b\},\{a,b\}\}
+    \]
+\end{exam}
+\ebox
+
+\bboxnota
+\begin{nota}[Topological Space]
+    If \(\TT\) is a topology on \(X\), then \((X,\TT)\) is called a
+    \TB{topological space}.
+\end{nota}
+\ebox
+
+\subsection{Metric Topology}
+
+\bboxdefn
+\begin{defn}[Open]
+    \((X,\TT)\). \(U\subseteq X\) is open \TU{iff}
+    \(\forall x\in U,\;\exists r>0\st B_r(x)\subseteq U\).
+\end{defn}
+\ebox
+
+\bboxprop
+\begin{prop}[The Set of Open sets form a Topology]
+    \(\TT=\{U\subseteq X:U\T{ open}\}\) is a topology.
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+    \(\emptyset,X\subseteq\TT\) trivially.
+
+    Let \(U,V\in\TT\). Since \(U\mathbin{\&}V\) are open
+    \[
+        \exists r_1,r_2>0\st\quad
+        B_{r_1}(x)\subseteq U\quad B_{r_2}(x)\subseteq V
+    \]
+    \[
+        r:=\min\{r_1,r_2\}\quad
+        B_r(x)\subseteq U\cap V\implies U\cap V\in\TT
+    \]
+
+    Let \(U_i\in\TT\) for all \(i\in I\). Let \(x\in\bigcup_{i\in I}U_i\).
+    \[
+        \T{So }\exists i\in I\st x\in U_i
+    \]
+    \[
+        \T{So }\exists r>0\st B_r(x)\subseteq U_i\subseteq\bigcup U_i
+    \]
+\end{proof}
+\ebox
+
+\bboxexam
+\begin{exam}[Counterexample for Infinte Intersections are Open]
+    \[
+        \left(\R,\TT_{\TR{open}}\right)\quad U_n=\left(-\frac1n,\frac1n\right)
+        \quad\bigcap U_n=\{0\}\not\in\TT
+    \]
+\end{exam}
+\ebox
+
+\bboxprop
+\begin{prop}[Metric Spaces are Haussdorff]
+    \((X,d)\ \forall x\neq y\in X,\;\exists U,V\subseteq X\T{ open}\st x\in U,\;y\in V,\;
+    U\cap V=\emptyset\)
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}[Proof]
+    Let \(r=d(x,y)>0\). Let \(U=B_{r/2}(x)\ V=B_{r/2}(y)\).
+    \bboxproof
+    \begin{proof}[Open Balls are Open Proof]
+        Let \(x\in B_r(a)\) for some \(a\in X,\;r>0\). Then
+        \[
+            d(x,a)<r\T{ by open ball def}
+        \]
+        \[
+            y\mathbin{:\in}B_{r-d(x,a)}(x)
+        \]
+        \[
+            \implies d(x,y)<r-d(x,a)
+        \]
+        \[
+            d(y,a)\overset{\TM{TI}}<d(x,y)+d(x,a)<r
+        \]
+        \[
+            \implies y\in B_r(a)\implies B_{r-d(x,a)}(x)\subseteq B_r(a)
+            \implies B_r(a)\T{ is open}
+        \]
+    \end{proof}
+    \ebox
+    Assume for the sake of contradiction \(\exists z\in B_{r/2}(x)\cap B_{r/2}(y)\).
+    \[
+        \implies d(z,x)<r/2\quad d(z,y)<r/2
+    \]
+    \[
+        r>d(x,z)+d(z,y)>d(x,y)=r
+    \]
+    This is a contradiction.
+\end{proof}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \(X=\{a,b,c\},\;\TT=\{\emptyset,X,\{a,b\}\}\). Since 
+    \(a\) cannot be "seperated" from \(b\), then there is 
+    no possible metric on \(X\), so \(\TT\) isn't a metric
+    topology.
+
+    All metrics make a topology, not all topologies make a metric.
+\end{exam}
+\ebox
+
+\subsection{Closed Sets}
+
+\bboxdefn
+\begin{defn}[Closed Sets]
+    \((X,\TT)\).
+    \(C\subseteq X\) is closed \TU{iff} \(X\backslash C\in\TT\)
+\end{defn}
+\ebox
+
+\bboxprop
+\begin{prop}[Properties of Closed Sets]
+    \((X,\TT)\).
+    \begin{enumerate}
+        \item \(\emptyset,X\) closed.
+        \item \(C,D\) closed then \(C\unin D\) closed.
+        \item \(C_i,\;i\in I,\;\bigintr_{i\in I}C_i\) is closed.
+    \end{enumerate}
+\end{prop}
+\ebox
+
+
+\bboxproof
+\begin{proof}[Proof by "Boolean Nonsense"]
+    \(X\smin C,\;X\smin D\in\TT\).
+    \[
+        X\smin(C\unin D)\in\TT
+    \]
+    \[
+        X\smin C\intr X\smin D\in\TT
+    \]
+\end{proof}
+\ebox
+
+\bboxdefn
+\begin{defn}[Limit Point]
+    \((X,\TT),\;A\ssq X\).
+    We say \(x\in X\) is a \TB{limit point} of \(A\) iff
+    \[
+        \forall U\in\TT\T{ with }x\in U\quad A\intr U\neq\emptyset
+    \]
+\end{defn}
+\ebox
+
+\bboxnote
+\begin{note}
+    \(x\in A\implies x\is\TM{limit\ point}\)
+\end{note}
+\ebox
+
+\bboxprop
+\begin{prop}[Limits Points in a Metric Topology are the Limit of a Sequence]
+    \(A\in X\). Then \(x\in X\) is a limit point of \(A\) \TU{iff}
+    \(\exists(a_n)\in A\st a_n\to x\).
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}[\((\implies)\) Proof]
+    Assume \(x\) is a limit a point of \(A\). Then
+    \(\forall U\in\TT,\;x\in U,\;A\intr U\neq\emptyset\).
+    Then \(\forall n\in\N,\;\exists a_n\in B_{\frac1n}(x)\intr A\quad(\neq\emptyset)\).
+    Then \(d(x,a_n)<\frac1n\to0\implies a_n\to x\)
+\end{proof}
+\ebox
+
+\bboxproof
+\begin{proof}[\((\limplies)\) Proof]
+    Assume \(\exists a_n\to x\). Then \(\forall\e>0\ \exists N\in\N\st d(a_n,x)<\e\).
+    Let \(U\subseteq X\) be open with \(x\in U\).
+    \[
+        \implies\exists r>0\st B_r(x)\ssq U
+    \]
+    \[
+        \T{Then }\exists N\in\N\st d(a_N,x)<r
+    \]
+    \[
+        \T{So }a_N\in U\implies A\intr U\ni a_N
+    \]
+\end{proof}
+\ebox
+
+
+\bboxprop
+\begin{prop}[Closed Sets Attain Limits]
+    C is closed \TU{iff}
+    C attains its limits points.
+\end{prop}
+\ebox
+
+
+\bboxproof
+\begin{proof}[\((\implies)\) Proof]
+    Suppose C is clsd.
+    Let \(x\in X\) be a limit point of C.
+    Since \(X\smin C\) is open
+    and \((X\smin C)\intr C=\emptyset\),
+    \(x\not\in X\smin C\implies x\in C\).
+\end{proof}
+\ebox
+
+\bboxproof
+\begin{proof}[\((\limplies)\) Proof]
+    Suppose C attains its limit points.
+    Show \(X\smin C\in\TT\).
+    \[
+        \llet x\in X\smin C
+    \]
+    \[
+        \T{So }x\T{ isn't a limit point of }C
+    \]
+    \[
+        \tthen\exists U_x\in\TT,\;x\in U_x\st
+        U_x\intr C=\emptyset
+    \]
+    \[
+        \tthen U_x\ssq U_x\intr C\quad(?)
+    \]
+    \[
+        \tthen X\smin C=
+        \bigunin_{x\in X\smin C}U_x
+        \in\TT
+    \]
+\end{proof}
+\ebox
+
+\bboxcoro
+\begin{coro}[Closed Sets Attain Sequence Limits]\label{coro:closed_sets_attain_sequence_limits}
+    \((X,d),\ C\ssq X\). Then \(C\) is closed
+    \TU{iff}
+    \[
+        \forall(c_n)\ssq C,\ c_n\to x\in X
+        \tthen x\in C
+    \]
+\end{coro}
+\ebox
+
+% lecture 9
+
+\bboxdefn
+\begin{defn}[Subspace Topology]
+  \((X,\TT),\;Y\ssq X\).
+
+  \TB{Note }that \(\vphi,X\in\TT,\ \TT\T{ closed under }(\unin,\intr)\)
+
+  The \TB{subspace topology} is 
+  \[
+  \TT' = \{
+  Y \intr U : U \in \TT
+  \}
+  \]
+  \bboxproof
+  \begin{proof}[Prove subspace topologies are Topologies]\ 
+    \begin{enumerate}
+      \item Show
+        \[
+        \emptyset, Y \in \TT'
+        \]
+        So,
+        \[
+        \emptyset\in\TT,\
+        Y \intr \emptyset = \emptyset
+        \implies \emptyset\in\TT'
+        \]
+        \[
+        X\in\TT,\ Y\intr X=Y
+        \implies Y \in \TT'
+        \]
+      \item Show
+        \[
+        U,V\in\TT'\implies U\intr V\in\TT'
+        \]
+        So let \(U,V\in\TT'\).
+        \[
+        \implies \exists\T{open }U_X\in X\st U=U_X\intr Y
+        \]
+        \[
+        \implies\exists\T{open }V_X\in X\st V=V_X\intr Y
+        \]
+        \[
+        \implies
+        U \intr V
+        =(U_X\intr Y) \intr (V_X\intr Y)
+        =(U_X\intr V_X)\intr Y
+        \]
+        \[
+        U_X\intr V_X\in\TT\implies
+        U\intr V\in\TT'
+        \]
+      \item Show
+        \[
+        U_i\in\TT',\ (i\in I)\implies\bigunin_{i\in I}U_i\in\TT'
+        \]
+        So
+        \[
+        U_i\in\TT'\implies U_i=Y\intr U^X_i\T{ for some open }U^X_i\in\TT
+        \]
+        \[
+        \bigunin U_i=Y\intr\bigunin U^X_i\implies U_i\in\TT'
+        \]
+    \end{enumerate}
+  \end{proof}
+  \ebox
+\end{defn}
+\ebox
+
+\bboxnote
+\begin{note}
+  \((X,\TT),\ Y\ssq X,\ \TT'\T{ as above}.\ C\ssq Y\T{ clsd}\).
+  \[
+  \implies Y\smin C \in \TT'
+  \]
+  \[
+  \implies Y\smin C=Y\intr U,\ U\in\TT
+  \]
+  \[
+  \implies C = Y \intr \underset{\T{clsd}}{\underbrace{(X\smin U)}}
+  \]
+\end{note}
+\ebox
+
+\bboxnote
+\begin{note}
+    \((X,d),\ Y\ssq X\). Define \((Y,d)\) as a subspace metric space.
+
+    Suppose \(U\ssq Y\) is open wrt \(Y\).
+    \[
+        \implies \forall x\in U\ \exists r_x>0\st
+        \underset{\T{in }Y}{\underbrace{B_{r_x}(x)}}\ssq U
+    \]
+    \[
+        \implies \forall x\in U\ \exists r_x>0\st
+        \underset{\T{in }X}{\underbrace{
+                B_{r_x}(x)
+        }} \intr Y \ssq U
+    \]
+    \[
+        U=\bigunin_{x\in U}(Y\intr B_{r_x}(x))
+        =Y\intr\underset{\T{open in }X}{\underbrace{
+                \left(
+                    \bigunin_xB_{r_x}(x)
+                    \right)
+        }}
+    \]
+\end{note}
+\ebox
+
+\subsection{Closure and Interior}
+\bboxdefn
+\begin{defn}[Closure and Interior]\ 
+    \begin{enumerate}
+        \item the \TB{Closure} of \(A\) is defined as follows:
+            \[
+                \cls A=\underset{C\T{ clsd}}{\bigunin_{C\supseteq A,}}C
+            \]
+        \item the \TB{Interior} of \(A\) is defined as follows:
+            \[
+                \interior(A)=\underset{U\in\TT}{
+                    \bigunin_{U\ssq A} U
+                }
+            \]
+    \end{enumerate}
+\end{defn}
+\ebox
+
+\bboxnote
+\begin{note}
+    \begin{enumerate}
+        \item \(\cls A\is\T{clsd}\ \interior(A)\in\TT\)
+        \item \(\interior(A)\ssq A\ssq\cls A\)
+        \item 
+            \[
+                A\T{ closed}\iff A=\cls A
+            \] \[
+                A\T{ open}\iff A=\interior(A)
+            \]
+    \end{enumerate}
+\end{note}
+\ebox
+
+\bboxnote
+\begin{note}
+    \((X,\TT),\ Y\ssq X,\ A\ssq Y.\ (Y,\TT')\).
+    \[
+        (\T{wrt}\ Y)\longrightarrow\cls A
+        = \bigintr\{
+            C : A\ssq C,\ C\ \TR{clsd\ in}\ Y
+        \}
+    \]
+    \[
+        =\bigintr\{
+            Y\intr C : A\ssq C,\ C\ clsd\ in\ X
+        \}
+    \]
+    \[
+        =Y\intr\left(
+            \bigintr\{
+                C : A \ssq C,\ C\ clsd\ in\ X
+            \}
+        \right)
+    \]
+    \[
+        = Y \intr \cls A\longleftarrow(\T{wrt }X)
+    \]
+    Similiarly, \(\interior(A)\T{ wrt }(Y)=Y \intr \interior(A)\T{ wrt }(X)\).
+\end{note}
+\ebox
+
+\bboxprop
+\begin{prop}[The Closure is the Set of Limit Points]
+    \(A\ssq X\).
+    \[
+        \cls A = \{
+            x \in X : x \T{ is a limit point of }A
+        \}
+    \]
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+    Let \(L:=\{
+        x \in X : x\T{ is a limit point of }A
+    \}\). Let \(x\in\cls A\). Let \(U\in\TT\st x\in U\).
+    Suppose \(A\intr U=\emptyset\)
+    \[
+        \implies A\ssq\underset{clsd}{\underbrace{
+                X\smin U
+        }}\implies x\in X\smin U
+    \]
+    Contradiction, \(x\in U\) and \(x\in X\smin U\).
+
+    Let \(x\in L\), and let \(C\) be clsd, with \(A\ssq C\).
+    Suppose
+    \[
+        x\not\in C\implies x\in X\smin C:=U
+    \]
+    \[
+        \implies(X \smin C)\intr A \neq \emptyset
+    \]
+    Contradiction of \(A\ssq C\).
+\end{proof}
+\ebox
+
+
+\bboxnote
+\begin{note}[Norms]\ 
+    \begin{enumerate}
+        \item P-Norm, \(x\in\R^n\).
+            \[
+                \left(
+                    \sum_{i=1}^n|x_i|^p
+                \right)^{\frac1p}
+            \]
+        \item Inf-Norm, \(x\in\R^n\).
+            \[
+                \max\{|x_i| : 0 \le i \le n\}
+            \]
+        \item P-Norm, \(x\in\R^\N\)
+            \[
+                \left(
+                    \sum_{i=1}^\infty|x_i|^p
+                \right)^{\frac1p}
+            \]
+        \item Inf-Norm, \(x\in\R^\N\).
+            \[
+                \sup\{|x_i|:i\in\N\}
+            \]
+        \item P-Norm, \(x\in\R^\R\).
+            \[
+                \left(
+                    \int_{-\infty}^\infty|f(x)|^p\,\mathrm dx
+                \right)^{\frac1p}
+            \]
+        \item Inf-Norm, \(x\in\R^\R\).
+            \[
+                \sup\{|f(x)|:x\in\R\}
+            \]
+        \item \(\ell^p=\{x\in\R^\N : \|x\|_p<\infty\}\)
+    \end{enumerate}
+\end{note}
+\ebox
+
+\bboxcoro
+\begin{coro}[Closure is the Set of Reachable Points]
+    \(\cls A=\{x\in X : \exists(a_n)\ssq A,\ a_n\to x\}\)
+\end{coro}
+\ebox
+
+\bboxdefn
+\begin{defn}[Interior Points]
+    \((X,\TT),\ A\ssq X\). Then \(x\in A\) is an \TB{interior point}
+    \TU{iff} 
+    \[
+        \exists U\in\TT\st x\in U\ssq A
+    \]
+    \bboxnote
+    \begin{note}
+        Notice that this is similiar to how we define openness in a metric 
+        space.
+    \end{note}
+    \ebox
+\end{defn}
+\ebox
+
+\bboxnote
+\begin{note}
+    \((X,d),\ A\ssq X\). Then \(x\in A\) is an interior point of \(A\) \TU{iff}
+    \[
+        \exists r > 0 \st x \in B_r(x) \ssq A
+    \]
+\end{note}
+\ebox
+
+\bboxprop
+\begin{prop}[Interior Points of A build the Interior of A]
+    \[
+        \interior(A) = \{
+            x \in A : x \is \T{an interior point of }A
+        \}
+    \]
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+    Let \(I:=\{ x : x\is\T{int pt}\}\), \(x\mathbin{:\in}\interior(A)\).
+    \[
+        \iff\exists U\in\TT,\ x\in U\ssq A\iff x\in I
+    \]
+\end{proof}
+\ebox
+
+\bboxexam
+\begin{exam}[Closures and Closed ``Versions'' of Sets are Inequal]
+    \((\N,|\cdot|)\)
+    \[
+        B_1(1) = \{1\}\implies \cls{B_1(1)}=\{1\}=B_1(1)
+    \]
+    \[
+        B_1[1]=\{1,2\}
+    \]
+\end{exam}
+\ebox
+
+\bboxproof
+\begin{proof}
+    \TB{Prove} \(\cls{B_r(x)}=B_r[x]\), under a (NVS).
+
+    NVS: vectors, w/ buildin norm. Basically this is a ordinary norm, 
+    rather than a metric. So we have norm TI, norm zero uniqueness,
+    AND a scalar property.
+
+    \((\ssq)\). Let \(y\in\cls{B_r(x)}\). So 
+    \[
+        B_r[x]=\{y\in\R : \|x-y\|\le r\}
+    \]
+    \[
+        \T{Show }\|x-y\|\le r
+    \]
+    \[
+        y\in\cls{B_r(x)}\implies\exists y_n\in\R^\N\st y_n\to y
+    \]
+    \[
+        \implies\exists N\in\N\st\forall n>0,\
+        \|x-y_n\|<r
+    \]
+    \[
+        \implies \|x-y\|\le r
+    \]
+    \((\supseteq)\) Let \(y\in B_r[x]\).
+    \[
+        \|y-x\|\le r
+    \]
+    \[
+        \T{Show }\exists(a_n)\in\R^\N\st a_n\to y
+    \]
+    \[
+        \llet a_i=y+\frac{x-y}i
+    \]
+    \[
+        \|x-a_i\|=\left\|x-y-\frac{x-y}i\right\|=\|x-x/i-y+y/i\|
+    \]
+    \[
+        \|x-x/i+(y/i-y)\|\le\|x-x/i\|+\|y-y/i\|<2r
+    \]
+\end{proof}
 \ebox
 
 
