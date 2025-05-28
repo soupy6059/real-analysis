@@ -60,13 +60,13 @@
 \contentsline {subsubsection}{{\it Proposition}: Boundedness iff subset of a Closed Ball}{21}{prop.2.3}%
 \contentsline {subsubsection}{{\it Proposition}: Cauchy implies Bounded}{22}{prop.2.4}%
 \contentsline {subsubsection}{{\it Example}: Counter Example}{22}{exam.2.18}%
-\contentsline {subsection}{\numberline {2.4}Convergence Examples}{23}{subsection.2.4}%
-\contentsline {subsubsection}{{\it Example}: 2-Adic Norm}{23}{exam.2.19}%
-\contentsline {subsubsection}{{\it Note}: P-Adic Convergence Claims}{23}{note.2.8}%
+\contentsline {subsection}{\numberline {2.4}Convergence Examples}{22}{subsection.2.4}%
+\contentsline {subsubsection}{{\it Example}: 2-Adic Norm}{22}{exam.2.19}%
+\contentsline {subsubsection}{{\it Note}: P-Adic Convergence Claims}{22}{note.2.8}%
 \contentsline {subsubsection}{{\it Example}: Bounded Sequences and the Infinity Norm}{23}{exam.2.20}%
 \contentsline {subsubsection}{{\it Example}: Zero Tailed Sequences aren't Cauchy under Sup Norm}{23}{exam.2.21}%
-\contentsline {subsection}{\numberline {2.5}Completeness}{24}{subsection.2.5}%
-\contentsline {subsubsection}{{\it Definition}: Complete, Complete Metric Space, Banach Space}{24}{defn.2.10}%
+\contentsline {subsection}{\numberline {2.5}Completeness}{23}{subsection.2.5}%
+\contentsline {subsubsection}{{\it Definition}: Complete, Complete Metric Space, Banach Space}{23}{defn.2.10}%
 \contentsline {subsubsection}{{\it Proposition}: Set of bounded Sequences on the P-Norm is Banach}{25}{prop.2.5}%
 \contentsline {subsection}{\numberline {2.6}Topological Spaces}{27}{subsection.2.6}%
 \contentsline {subsubsection}{{\it Definition}: Topology}{27}{defn.2.11}%
@@ -94,3 +94,4 @@
 \contentsline {subsubsection}{{\it Definition}: Interior Points}{35}{defn.2.17}%
 \contentsline {subsubsection}{{\it Proposition}: Interior Points of A build the Interior of A}{36}{prop.2.12}%
 \contentsline {subsubsection}{{\it Example}: Closures and Closed ``Versions'' of Sets are Inequal}{36}{exam.2.32}%
+\contentsline {subsubsection}{{\it Definition}: Subsequence}{37}{defn.2.18}%

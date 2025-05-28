@@ -1818,6 +1818,189 @@ absolutly convergent sequences.
 \end{proof}
 \ebox
 
+% lecture 10
+
+\bboxexam
+\begin{exam}
+    \((X,d),\ A\ssq X\T{ complete}\).
+    Prove \(A\) is closed.
+    \[
+        (a_n)\ssq A,\ a_n\to x\in X
+    \]
+    \[
+        (a_n)\T{ cauchy},\
+        (a_n)\ \T{conv to a pt in }A.
+    \]
+    \[
+        \implies x \in A\implies \T{closed}
+    \]
+\end{exam}
+\ebox
+
+\bboxdefn
+\begin{defn}[Subsequence]
+    \[
+        (X,d),\ (X_n)\subseteq X
+    \]
+    A subsequence of \((X_n)\) is a sequence 
+    \[
+        (X_{n_k})_{k=1}^\infty,\ \TR{where}\ 
+        n_1 < n_2 < n_3 < \cdots
+    \]
+    \bboxnote
+    \begin{note}
+        \[
+            \mathbb{N}\rightarrow\mathbb{N}\rightarrow X : x(n(k)),\ n\T{ increasing}
+        \]
+        \[
+            K\ge N,\ n_K\ge K\ge N
+        \]
+        \[
+            K\ge N,\ n(K)\ge K\ge N
+        \]
+    \end{note}
+    \ebox
+\end{defn}
+\ebox
+
+% `(eq  \ssq
+\bboxexam
+\begin{exam}
+    \[
+        (X,d),\ (X_n)\subseteq X.\ 
+        \T{Prove}\ x_n\to x
+        \implies x_{n_k}\to x
+    \]
+    \bboxproof
+    \begin{proof}
+        \[
+            K\ge N,\ n_K\ge K\ge N
+        \]
+        \[
+            \implies d(x_{n_k},x)<\epsilon
+        \]
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \[
+        \llet (X,d)\ (x_n)\ssq X\T{ cauchy}
+    \]
+    \[
+        \T{Show }x_n\T{ conv}\iff x_n \T{ has a conv subseq}
+    \]
+    \bboxproof
+    \begin{proof}
+        The forward direction is trivial.
+
+        Backwards: Let \((x_n)\) be cauchy, and let
+        some subsequence \(x_{n_k}\to x\).
+        \[
+            \T{Let}\ \epsilon > 0,
+            \T{let}\ N\in\N\st
+            \forall n,m\ge N
+            \implies d(x_n,d_m)<\frac\e2
+        \]
+        \[
+            \llet\ k\in\N\ k\ge K
+            \implies d(x_{n_k},x)<\frac\e2
+        \]
+        \[
+            \T{Assume}\ K\ge N\implies n_K\ge N
+        \]
+        \[
+            \forall n\ge N,\ d(x_n,x)\le
+            d(x_n,x_{n_k})+d(x_{n_k},x)
+        \]
+        \[
+            <\frac\e2+\frac\e2=\e
+        \]
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \[
+        \llet\ (X,d),\ x_n\to x
+    \]
+    \[
+        \TR{Prove}\
+        C=\{x_n:n\in\N\}\unin\{x\}\ \is\ \TR{closed}
+    \]
+    \bboxproof
+    \begin{proof}
+        \[
+            \iif\ \exists N\ \TR{inf\ many}\ y_n=x_N
+        \]
+        \[
+            \tthen\ (x_N)_n\is\ \TR{a\ subseq\ of}\ y_n
+        \]
+        \[
+            y_n\to y,\ (x_N)_n\to x_N\implies y=x_N\in C\ \blacksquare
+        \]
+
+
+        \[
+            \iif\ \forall n,\ \TR{only\ finitly\ many}\ y_K=x_n
+        \]
+        \[
+            \tthen\ \exists(y_{n_k})
+        \]
+        which is also a subseq of \((x_n)\). Then \(y=x\). \(\blacksquare\)
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+
+\bboxexam
+\begin{exam}
+    Let \(V\) be a (NVS), \(U\ssq V,\ U\in\TT,\ x\in V\). Show
+    \[
+        x+U=\{x+u\colon u\in U\}\in\TT
+    \]
+
+    \bboxproof
+    \begin{proof}
+        \[
+            \llet\ x+u\in x+U,\ u\in U\in\TT
+        \]
+        \[
+            u\in U\in\TT\implies \exists r>0\st
+            B_r(u)\ssq U
+        \]
+        \[
+            B_r(x+u)=x+B_r(u)\ssq x+U\implies x+U\in\TT
+        \]
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \(V\ \is\ \TR{NVS},\ \TT\ni U\ssq V,\ A\ssq V.\)
+    \[
+        \TR{Show}\ A+U=\{a+u:a\in A,\ u\in U\}\in\TT
+    \]
+    \bboxproof
+    \begin{proof}
+        \[
+            A+U=\bigunin_{a\in A}a+U
+        \]
+        \[
+            a+U\in\TT\implies A+U\in\TT
+        \]
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
 
 % <++>
 \end{document}
@@ -1848,3 +2031,8 @@ absolutly convergent sequences.
 
 
 % scrolloff buffer
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
