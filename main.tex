@@ -2001,6 +2001,564 @@ absolutly convergent sequences.
 \end{exam}
 \ebox
 
+% lecture 11
+
+
+\bboxexam
+\begin{exam}
+    \[
+        V\ \TM{NVS},\ C\ssq V\ \TR{clsd},\ x\in V
+    \]
+    prove \(x+C\) is closed.
+    \bboxproof
+    \begin{proof}
+        \[
+            V\smin C\in\TT\implies x + V\smin C\in\TT\ \TR{from\ above}
+        \]
+        \[
+            V\smin(x+V\smin C)\ \TR{is\ closed\ by\ defn}
+        \]
+        \[
+            =x+C
+        \]
+        \[
+            -C\in\TT.\ x+(-C).\ -(x+(-C))=x+C
+        \]
+    \end{proof}
+    \ebox
+
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    Find \(C,D\ssq \R\) closed s/t \(C+D\) isn't closed.
+    \bboxproof
+    \begin{proof}
+        \(C:=\N,\ D:=\{-n+1/n : n\ge 2\}\).
+        \[
+            \frac1n\in C+D,\ n\ge 2
+        \]
+        \[
+            0\not\in C+D\implies C+D\neq\cls{C+D}
+        \]
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+
+\bboxexam
+\begin{exam}
+    \[
+        (X,d),\ A\ssq X.\ \TR{Show}\ 
+        X\smin\interior(A)=\cls{X\smin A}
+    \]
+    \bboxproof
+    \begin{proof}[(\(\ssq\)) Proof]
+        Let \(x\in X\smin\interior(A)\).
+        Let \((x_n)\ssq X\smin A\st x_n\in B_{\frac1n}(x)\).
+        \[
+            x_n\to x\implies X\smin\interior(A)\ssq \cls{X\smin A}
+        \]
+    \end{proof}
+    \ebox
+
+    \bboxproof
+    \begin{proof}[\((\supseteq)\) Proof]
+        Let \(x\in\cls{X\smin A}\).
+
+        Then \(\exists x_n\ssq X\smin A\st x_n\to x\).
+
+        Then \(\forall\e>0,\ \exists N\in\N\st x_N\in B_\e(x)\).
+
+        Note that since \(x_N\not\in A\ \tthen\ B_\e(x)\not\ssq A\).
+
+        Since \(y\not\in\interior(A)\iff\forall\e>0,\ B_\e(x)\not\ssq A\),
+        then \(x\not\in\interior(A)\).
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+
+\bboxexam
+\begin{exam}
+    Prove \(X\smin\cls{A} = \interior{X \smin A}\).
+    \bboxproof
+    \begin{proof}
+        We know from above that \(X\smin\interior(X\smin A)
+        = \cls{X\smin(X\smin A)}\).
+
+        So \(X\smin\interior(X\smin A) = \cls{A}\).
+
+        Then \(X\smin \cls{A} = \interior(X\smin A)\).
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+\bboxdefn
+\begin{defn}[Boundary]
+    \((X,d),\ A\ssq X\). The \TB{boundary} of \(A\) is
+    \[
+        \partial A=\cls{A}\smin\interior(A)
+    \]
+\end{defn}
+\ebox
+
+\bboxexam
+\begin{exam}
+    Prove \(\partial A\) is closed.
+    \bboxproof
+    \begin{proof}
+        \[
+            \partial A=\cls{A}\smin\interior(A)
+        \]
+        \[
+            =\cls{A}\intr(X\smin\interior(A))
+        \]
+        \[
+            =\cls{A}\intr\cls{X\smin A}
+        \]
+        So \(\partial A\) is closed, because intersections of
+        closed sets are closed.
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    Prove \(A\) is closed \TU{iff} \(\partial A\ssq A\).
+    \bboxproof
+    \begin{proof}[\((\implies)\) Proof]
+        \[
+            A\T{ is closed}\implies A=\cls{A}
+        \]
+        \[
+            \partial A=\cls{A}-A^0=A-A^0\ssq A
+        \]
+    \end{proof}
+    \ebox
+
+    \bboxproof
+    \begin{proof}[\((\limplies)\) Proof]
+        \[
+            \partial A\ssq A\implies\cls{A}\smin A^0\ssq A
+        \]
+        \[
+            \implies \cls{A}\ssq A\unin A^0=A
+        \]
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+\bboxdefn
+\begin{defn}[Hausdorf]
+    \((X,\TT)\) is Hausdorf \TU{iff}
+    \[
+        \forall x\neq y\in X
+    \]
+    \[
+        \exists\ \TR{disjoint}\ U,V\in\TT\st x\in U,\ y\in V.
+    \]
+\end{defn}
+\ebox
+
+\bboxexam
+\begin{exam}
+    Let \((X,\TT)\) be Hausdorf. Show
+    \(\{x\}\) is closed.
+    \bboxproof
+    \begin{proof}
+        
+        \[
+            \forall y\neq x,\ U_y,V_y\in\TT,\ U_y\intr V_y=\emptyset,\ 
+            y\in U_y,\ x\in V_y
+        \]
+        \[
+            X\smin\{x\}=\bigunin_{y\neq x}U_y\in\TT
+        \]
+    \end{proof}
+    \ebox
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \((X,\PP(X))\). Prove \(\TT=\PP(X)\) is induced by a metric.
+    \bboxproof
+    \begin{proof}
+        Let
+        \[
+            d(x,y)=\delta(x,y):=\begin{cases} 1 & x=y \\ 0 & o/w \end{cases}
+        \]
+        We need to show \(\forall A\in\TT,\ A\T{ is open}\). Let \(A\in\TT\).
+        \[
+            A=\bigunin_{a\in A}\{a\}=\bigunin_{a\in A}B_1(a)
+        \]
+        Since \(B_1(a)\) is open, and arbitrary unions of open sets wrt
+        \(\delta\) are open, then \(A\) is open.
+    \end{proof}
+    \ebox
+
+\end{exam}
+\ebox
+
+\section{Continuity}
+\subsection{Continuity}
+
+\bboxdefn
+\begin{defn}[Topologic Continuity]
+    Let \((X,\TT),\ (Y,\TT')\) be topological spaces.
+
+    \(f:X\to Y\) is cts \TU{iff}
+    \[
+        f^{-1}(U)\in\TT,\ \forall U\in\TT'
+    \]
+
+    Noting that \(f^{-1}(U)=\{x\in X:f(x)\in U\}\).
+\end{defn}
+\ebox
+
+\bboxprop
+\begin{prop}[Closedness and Continuity]
+    \((X,\TT),\ (Y,\TT'),\ f:X\to Y\). TFAE:
+    \begin{enumerate}
+        \item \(f\ \TR{cts}\)
+        \item \(\forall A\ssq X,\ f(\cls{A})\ssq\cls{f(A)}\)
+        \item \(\forall\TR{closed}\ C\ssq Y,\ f^{-1}(C)\ \TR{is\ closed\ in}\ X\)
+    \end{enumerate}
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}[\((1)\implies(2)\) Proof]
+    Assume \(f\) is cts.
+
+    Let \(y\in f(\cls{A})\).
+
+    Show \(\forall U\in\TT'\st y\in U,\ U\intr f(A)\neq \emptyset\).
+    
+    Let \(y=f(x),\ \TR{for\ some}\ x\in\cls{A}\).
+
+    So \(\forall V\in\TT\st x\in V,\ V\intr A\neq \emptyset\).
+
+    Let \(U\in\TT'\st y\in U\).
+
+    \(\implies f(x)\in U\).
+
+    \(\implies x\in f^{-1}(U)\), and \(f^{-1}(U)\in\TT\) by continuity.
+
+    Since \(f^{-1}(U)\in\TT,\ x\in f^{-1}(U),\ x\in\cls{A}\),
+    then by the defn of the closure,
+    \(f^{-1}(U)\intr A\neq \emptyset\).
+
+    Let \(a\in f^{-1}(U)\intr A\neq\emptyset\)
+
+    \(\implies f(a)\in U \intr f(A)\)
+
+    \(\implies y \in \cls{f(A)}\)
+\end{proof}
+\ebox
+
+
+\bboxproof
+\begin{proof}[\((2)\implies(3)\) Proof]
+    \(\llet:C\ssq Y\ \TR{be\ closed\ and}\ A=f^{-1}(C).\)
+
+    \(\TR{Show}\ A\ \is\ \TR{closed}.\ \TR{Show}\ \cls{A}\ssq A.\)
+
+    \(\TR{For}\ x\in\cls{A},\ f(x)\in f(\cls{A})\ssq\cls{f(A)}\ssq \cls{C}=C\)
+
+    \(\implies x\in f^{-1}(C)=A\)
+
+    \(\implies A=\cls{A}\implies A\ \is\ \TR{closed}\)
+\end{proof}
+\ebox
+
+\bboxproof
+\begin{proof}[\((3)\implies(1)\) Proof]
+    \(\TR{For}\ U\ssq Y\ \TR{open},\ Y\smin U\ \TR{clsd}\)
+
+    \(\implies f^{-1}(Y\smin U)\ \TR{clsd\ by\ hypothesis}\)
+
+    \(=X\smin f^{-1}(U)\)
+    
+    \(\implies f^{-1}(U)\ \TR{open}\)
+\end{proof}
+\ebox
+
+
+\bboxprop
+\begin{prop}[Continuity preserves Convergence in Metric Spaces]
+    \((X,d),\ (Y,d'),\ f:X\to Y\).
+
+    Then \(f\) is cts \TU{iff}
+
+    \(f(x_n)\to f(x)\ \TR{whenever}\ (x_n)\ssq X,\ x_n\to x\in X.\)
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}[\((\implies)\) Proof]
+    Assume \(f\) is cts.
+
+    \(\llet:(x_n)\ssq X,\ x_n\to x\in X\).
+
+    \(\llet:\e>0\).
+
+    \(\TR{Consider}:U=B_\e(f(x))\).
+
+    \(\implies x\in f^{-1}(U)\ \is\ \TR{open\ by\ cts}\).
+
+    \(\implies\exists r>0,\ B_r(x)\ssq f^{-1}(U)\ \TR{by\ openess}\)
+
+    \(\TR{Since}\ x_n\to x,\ \exists N\in\N\st n\ge N\implies f(x_n,x)<r\)
+
+    \(\TR{Hence},\ n\ge N\implies x_n\in f^{-1}(U)\)
+
+    \(\implies\iif\ n\ge N\ \tthen\ d'(f(x_n), f(x))<\e\)
+
+    \(\implies f(x_n)\to f(x)\).
+\end{proof}
+\ebox
+
+
+\bboxproof
+\begin{proof}[\((\limplies)\) Proof]
+    \[
+        \TR{Assume}: f(z_n)\to f(z)\ \iif\ z_n\to z
+    \]
+    \[
+        \llet:A\ssq X\ \TR{be\ open}
+    \]
+    \[
+        \TR{Show}: f(\cls{A})\ssq\cls{f(A)}
+    \]
+    \[
+        \llet: y\in f(\cls{A})\st y=f(x)
+    \]
+    \[
+        \llet: (a_n)\ssq A\st a_n\to x
+    \]
+    \[
+        \implies f(a_n)\to f(x)=y
+    \]
+    \[
+        \implies y\in \cls{f(A)}
+    \]
+\end{proof}
+\ebox
+
+\subsection{Bounded Linear Maps}
+\bboxdefn
+\begin{defn}[Operator Norm, Bounded Linear Map]
+    \(V,W,\ \TR{NVS},\ T:V\to W\ \is\ \TR{linear}\).
+
+    \(T\ \is\ \TR{bd}\ \iff\)
+    \[
+        \|T\|_\TR{op}:=\sup\{
+            \|T(x)\|:\|x\|=1
+        \} < \infty
+    \]
+\end{defn}
+\ebox
+
+\bboxprop
+\begin{prop}
+    \(B(V,W):=\{T:V\to W\ |\ T\ \TR{linear\ and\ bd}\}\) is a vector space.
+
+    Prove \(\|\cdot\|_\TR{op}\) is a norm on \(B(V,W)\).
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+    Show
+    \begin{enumerate}
+        \item \(\|sT\|_\TR{op} = |s|\|T\|_\TR{op}\)
+        \item \(\|T\|_\TR{op}=0\iff T=0\)
+        \item \(\|T+S\|_\TR{op}\le\|T\|_\TR{op}+\|S\|_\TR{op}\)
+    \end{enumerate}
+
+    \TB{1:} \(\|sT\|_\TR{op}=\sup\{\|sT(x)\|:\|x\|=1\}\)
+
+    \(=\sup\{|s|\|T(x)\|:\|x\|=1\}\)
+
+    \(=|s|\|T\|_\TR{op}\)
+
+    \TB{2 (\(\boldsymbol\implies\)):}
+    \(\|T\|_\TR{op}=\sup\{\|T(x)\|:\|x\|=1\}=0\)
+
+    \(\implies \|T(x)\|=0,\ \iif\ \|x\|=1\)
+
+    \(\implies T(x)=0,\ \iif\ \|x\|=1\)
+
+    \(\implies T=0_\TR{op}\)
+
+    \TB{2 (\(\boldsymbol\limplies\)):}
+    \(T=0_\TR{op}\)
+
+    \(\implies T(x)=\vec 0\implies \|T(x)\|=0\)
+
+    \(\implies \sup\{\|T(x)\|:\|x\|=1\} = 0\)
+
+    \TB{3:}
+    \(\|T+S\|_\TR{op}=
+    \sup\{\|(T+S)(x)\|:\|x\|=1\}\)
+
+    \(=\sup\{\|T(x) + S(x)\|:\|x\|=1\}\)
+
+    \(\le\sup\{\|T(x)\|+\|S(x)\|:\|x\|=1\}\)
+    
+    \(=\|T\|_\TR{op}+\|S\|_\TR{op}\)
+\end{proof}
+\ebox
+
+\bboxnote
+\begin{note}
+    \(T\in B(V,W).\)
+
+    \(\iif\ \vec 0\neq x\in V\ \tthen\ 
+    \left\|T\left(\frac x{\|x\|}\right)\right\|\le\|T\|_\TR{op}\)
+
+    \(\implies \frac1{\|x\|}\|T(x)\|\le\|T\|_\TR{op}\)
+
+    \(\implies\|T(x)\|\le\|x\|\cdot\|T\|_\TR{op}\)
+\end{note}
+\ebox
+
+\bboxprop
+\begin{prop}[Continuous Linear iff Bounded Linear]
+    \(V,W\ \TR{NVS},\ T:V\to W\ \TR{linear}\).
+
+    \(\tthen\ T\ \is\ \TR{cts}\iff T\ \is\ \TR{bd}\)
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}[\((\neg\limplies\neg)\) Proof]
+    Assume \(T\) isn't bd. So
+    \(\forall\|x_n\|=1,\ \|T(x_n)\|\ge n\).
+
+    \(\TR{Consider}: \|\frac1nx_n\|=\frac1n\to 0\)
+
+    \(\|T(\frac1nx_n)\|=\frac1n\|T(x_n)\|\ge\frac1nn\ge1\)
+
+    So \(T\) doesn't preserve convergence, so \(T\) isn't cts.
+\end{proof}
+\ebox
+
+\bboxproof
+\begin{proof}[\((\limplies)\) Proof]
+    Assume \(T\) is bd. Show \(T\) is cts.
+    \[
+        \|T\|_\TR{op}=\sup\{\|T(x)\|:\|x\|=1\}<\infty
+    \]
+    Let \((x_n)\ssq V\st x_n\to x\in V\).
+
+    \(\|T(x_n) - T(x)\|=\|T(x_n-x)\|\le\|x_n-x\|\|T\|_\TR{op}<\frac\e{\|T\|_\TR{op}}
+    \|T\|_\TR{op}=\e\)
+\end{proof}
+\ebox
+
+\subsection{More Continuity}
+
+
+\bboxdefn
+\begin{defn}[Uniform Continuity]
+    \((X,d),\ (Y,d'),\ f:X\to Y\).
+
+    \(f\) is \TB{uniform continuous} \TU{iff}
+
+    \(\forall\e>0\ \exists\delta>0\st
+    d'(f(a),f(b))<\e\ \iif\ a,b\in X\ \TR{w/}\ 
+    d(a,b)<\delta\)
+\end{defn}
+\ebox
+
+\bboxnote
+\begin{note}
+    \(f\) is unif cts \TU{iff}
+
+    \(\forall\e>0\ \exists\delta>0\) which works to establish
+    continuity at every \(b\in X\).
+\end{note}
+\ebox
+
+\bboxdefn
+\begin{defn}[Lipschitz]
+    \((X,d)\ (Y,d'),\ f:X\to Y.\)
+
+    We say \(f\) is \TB{Lipschitz} \TU{iff}
+
+    \(\exists M>0,\ d'(f(x),f(x))\le Md(x,y),\ \forall x,y\in X\).
+\end{defn}
+\ebox
+
+Kind of like uniform uniform cts.
+
+\bboxprop
+\begin{prop}[Lipschitz implies Uniform Continuous]
+    \(f:X\to Y\) Lipschitz then \(f\) is unif cts.
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+    \(\llet:\e>0,\ M>0\ \TR{be\ the\ Lipschitz\ constant\ for}\ f\).
+
+    \(\llet:\delta=\frac\e M\)
+
+    \(\TR{Assume}:d(a,b)<\delta,\ a,b\in X.\)
+
+    \(\implies d'(f(a),f(b))\le Md(a,b)<\e\)
+\end{proof}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \(f:[0,1]\to\R,\ f(x)=\sqrt x\).
+
+    \(\TR{Claim}:f\ \is\ \TR{unif\ cts}\)
+    \bboxnote
+    \begin{note}
+        \begin{align*}
+            |\sqrt x - \sqrt y|^2 &= |\sqrt x - \sqrt y||\sqrt x - \sqrt y|\\
+                                  &\le|\sqrt x+\sqrt y||\sqrt x-\sqrt y|\\
+                                  &=|x-y|
+        \end{align*}
+    \end{note}
+    \ebox
+    \(\llet:\e>0,\ \delta=\e^2\).
+
+    \(\iif\ a,b\in[0,1]\ \TR{w/}\ 
+    |a-b|<\delta=\epsilon^2\
+    \tthen\ |\sqrt a-\sqrt b|<\e\)
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \(\TR{Claim}:f\ \is\ \TR{not\ Lipschitz}\)
+
+    \(\TR{Suppose}:f\ \is\ \TR{Lipschitz}\)
+
+    \(\TR{WLOG,\ assume}:M>1\)
+
+    \(\frac1{M^4}\in[0,1]\)
+
+    \(\left|\frac1{\sqrt{M^4}}-0\right|\le M\left|\frac1{M^4}-0\right|\)
+
+    \(\implies\frac1{M^2}\le\frac1{M^3}\implies M^3\le M^2\)
+
+    That's a contradiction.
+\end{exam}
+\ebox
+
 
 % <++>
 \end{document}
