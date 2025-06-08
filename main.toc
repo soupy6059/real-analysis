@@ -97,15 +97,31 @@
 \contentsline {subsubsection}{{\it Definition}: Subsequence}{38}{defn.2.18}%
 \contentsline {subsubsection}{{\it Definition}: Boundary}{41}{defn.2.19}%
 \contentsline {subsubsection}{{\it Definition}: Hausdorf}{42}{defn.2.20}%
-\contentsline {section}{\numberline {3}Continuity}{43}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Continuity}{43}{subsection.3.1}%
-\contentsline {subsubsection}{{\it Definition}: Topologic Continuity}{43}{defn.3.1}%
-\contentsline {subsubsection}{{\it Proposition}: Closedness and Continuity}{43}{prop.3.1}%
-\contentsline {subsubsection}{{\it Proposition}: Continuity preserves Convergence in Metric Spaces}{44}{prop.3.2}%
-\contentsline {subsection}{\numberline {3.2}Bounded Linear Maps}{45}{subsection.3.2}%
-\contentsline {subsubsection}{{\it Definition}: Operator Norm, Bounded Linear Map}{45}{defn.3.2}%
-\contentsline {subsubsection}{{\it Proposition}: Continuous Linear iff Bounded Linear}{46}{prop.3.4}%
+\contentsline {subsection}{\numberline {2.10}Assignments}{43}{subsection.2.10}%
+\contentsline {subsubsection}{{\it Definition}: Strongly Equivalent Metrics}{43}{defn.2.21}%
+\contentsline {subsubsection}{{\it Definition}: Equivalent Metrics}{43}{defn.2.22}%
+\contentsline {subsubsection}{{\it Definition}: Dense}{43}{defn.2.23}%
+\contentsline {subsubsection}{{\it Definition}: Seperable}{43}{defn.2.24}%
+\contentsline {subsubsection}{{\it Definition}: Basis}{43}{defn.2.25}%
+\contentsline {subsubsection}{{\it Definition}: Second Countable}{43}{defn.2.26}%
+\contentsline {section}{\numberline {3}Continuity}{44}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Continuity}{44}{subsection.3.1}%
+\contentsline {subsubsection}{{\it Definition}: Topologic Continuity}{44}{defn.3.1}%
+\contentsline {subsubsection}{{\it Proposition}: Closedness and Continuity}{44}{prop.3.1}%
+\contentsline {subsubsection}{{\it Proposition}: Continuity preserves Convergence in Metric Spaces}{45}{prop.3.2}%
+\contentsline {subsection}{\numberline {3.2}Bounded Linear Maps}{46}{subsection.3.2}%
+\contentsline {subsubsection}{{\it Definition}: Operator Norm, Bounded Linear Map}{46}{defn.3.2}%
+\contentsline {subsubsection}{{\it Proposition}: Continuous Linear iff Bounded Linear}{47}{prop.3.4}%
 \contentsline {subsection}{\numberline {3.3}More Continuity}{47}{subsection.3.3}%
 \contentsline {subsubsection}{{\it Definition}: Uniform Continuity}{47}{defn.3.3}%
 \contentsline {subsubsection}{{\it Definition}: Lipschitz}{47}{defn.3.4}%
 \contentsline {subsubsection}{{\it Proposition}: Lipschitz implies Uniform Continuous}{47}{prop.3.5}%
+\contentsline {subsection}{\numberline {3.4}Isomorphisms}{48}{subsection.3.4}%
+\contentsline {subsubsection}{{\it Definition}: Homeomorphism}{49}{defn.3.5}%
+\contentsline {subsubsection}{{\it Definition}: Homeomorphic}{49}{defn.3.6}%
+\contentsline {subsubsection}{{\it Definition}: Isometry}{49}{defn.3.7}%
+\contentsline {subsubsection}{{\it Definition}: Isometric Isomorphism}{49}{defn.3.8}%
+\contentsline {subsubsection}{{\it Proposition}: Isometries are Continuous and Injective}{49}{prop.3.6}%
+\contentsline {subsubsection}{{\it Proposition}: Isometric Isomorphisms have Isometric Isomorphic Inverses}{50}{prop.3.7}%
+\contentsline {subsection}{\numberline {3.5}Urysohn's Lemma}{51}{subsection.3.5}%
+\contentsline {subsubsection}{{\it Theorem}: Urysohn's Lemma}{51}{thm.3.1}%

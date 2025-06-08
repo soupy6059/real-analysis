@@ -2207,6 +2207,61 @@ absolutly convergent sequences.
 \end{exam}
 \ebox
 
+\subsection{Assignments}
+
+
+\bboxdefn
+\begin{defn}[Strongly Equivalent Metrics]
+    Let \(d,d'\) be two metrics on a set \(X\).
+    We say that \(d\) and \(d'\) are \TB{strongly equivalent} \TU{iff}
+
+    \(\exists C,D>0\st Cd(x,y)\le d'(x,y)\le Dd(x,y)\)
+\end{defn}
+\ebox
+
+\bboxdefn
+\begin{defn}[Equivalent Metrics]
+    We say \(d,d'\) are \TB{equivalent} \TB{iff}
+
+    \(\forall (x_n)\subseteq X,\ x_n\underset{d}\longrightarrow x\iff
+    x_n\underset{d'}\longrightarrow x,\ \TR{for\ some}\ x\in X\)
+\end{defn}
+\ebox
+
+\bboxdefn
+\begin{defn}[Dense]
+    \((X,d)\). \(A\ssq X\) is \TB{dense} in \(X\) if 
+    \[
+        \forall\e>0\ \forall x\in X\ \exists a\in A
+        \st d(a,x)<\e
+    \]
+\end{defn}
+\ebox
+
+
+\bboxdefn
+\begin{defn}[Seperable]
+    A metric space is \TB{seperable} if there is a countable, dense subset.
+\end{defn}
+\ebox
+
+\bboxdefn
+\begin{defn}[Basis]
+    \((X,d)\). \(\beta\ssq\PP(X)\) is a \TB{basis} \TU{iff}
+    
+    \(\forall B\in\beta\ \is\ \TR{open\ and}\ 
+    \forall \TR{open}\ U\ssq X,\ U=\bigunin B_i\ \TR{for\ some\ collection}\ \{B_i:i\in I\}\)
+\end{defn}
+\ebox
+
+\bboxdefn
+\begin{defn}[Second Countable]
+    \((X,d)\) is \TB{second countable} \TU{iff} it has a countable basis.
+\end{defn}
+\ebox
+
+
+
 \section{Continuity}
 \subsection{Continuity}
 
@@ -2559,13 +2614,240 @@ Kind of like uniform uniform cts.
 \end{exam}
 \ebox
 
+\subsection{Isomorphisms}
+
+\TB{Question:} What should it mean for 
+\((X,\TT)\) and \((Y,\TT')\) to be the same?
+
+
+(ie) we want
+\begin{enumerate}
+    \item A bijection \(f:X\to Y\)
+    \item \(U\in\TT\iff f(U)\in\TT'\)
+\end{enumerate}    
+
+Isomorphisms preserve category structure.
+
+
+\bboxnote
+\begin{note}
+    Note that \(f(U)\in\TT'\implies U=f^{-1}(f(U))\). 
+    So we want \(f\) cts.
+
+    \(U\in\TT\implies f(U)=(f^{=})^{-1}(U)\).
+    So we want \(f^{=}\) cts.
+
+    Additionaly, for notation's sake note that
+    \(f^{=}\) is the inverse of \(f\). This
+    comes from BQN.
+\end{note}
+\ebox
+
+\bboxdefn
+\begin{defn}[Homeomorphism]
+    \(f:X\to Y\) is a \TB{homeomorphism} \TU{iff}
+    \(f\) is bijective, cts, and \(f^=\) is cts.
+\end{defn}
+\ebox
+
+\bboxdefn
+\begin{defn}[Homeomorphic]
+    If a homeomorphism \(f:X\to Y\) exists,
+    then we say \(X\) and \(Y\) are homeomorphic,
+    \(X\cong Y\).
+\end{defn}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \[
+        X=\{0,1\},\ \TT=\{\emptyset, X, \{0\}\}
+    \]
+    \[
+        Y=\{a,b\},\ \TT'=\{\emptyset, Y, \{a\}\}
+    \]
+    \[
+        \implies X\cong Y
+    \]
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \[
+        X=[0,2\pi),\ Y=\{(x,y):x^2+y^2=1\}
+    \]
+    \[
+        X\not\cong Y
+    \]
+    We can conclude this because the topologicaly
+    qualities of each space are different.
+
+    Specifically, \(Y\) is compact, and \(X\) isn't.
+
+    With the defn of homeomorphic, \(f^=\) isn't cts.
+\end{exam}
+\ebox
+
+\TB{Question:} what would it mean for \((X,d)\) and 
+\((Y,d')\) to be the same.
+
+We want:
+\begin{enumerate}
+    \item \(f:X\to Y\) bij
+    \item \(d'(f(a),f(b))=d(a,b)\)
+\end{enumerate}
+
+\bboxdefn
+\begin{defn}[Isometry]
+    \((X,d),\ (Y,d')\) is an \TB{isometry} \TU{iff}
+    \[
+        d'(f(a),f(b))=d(a,b),\
+        \forall a,b\in X
+    \]
+\end{defn}
+\ebox
+
+\bboxdefn
+\begin{defn}[Isometric Isomorphism]
+    If a isometry \(f\) is bijective, it's
+    called a \TB{isometric isomorphism}.
+\end{defn}
+\ebox
+
+\bboxprop
+\begin{prop}[Isometries are Continuous and Injective]
+    ...
+\end{prop}
+\ebox
+
+\bboxproof
+\begin{proof}
+    Let \(f\) be an isometry.
+
+    Show 
+    \[
+        \forall\e>0,\ \exists\de>0\st
+        d(x,y)<\de\implies d'(f(x),f(y))<\e
+    \]
+
+    We could also show that
+    \[
+        \exists M>0\st d'(f(x),f(y))\le Md(x,y)
+    \]
+    which would mean \(f\) is Lipshitz, so it's
+    uniformly cts, so it's cts.
+
+    Since \(f\) is an isometry,
+    \[
+        d(x,y)=d'(f(x),f(y))
+    \]
+    \[
+        \llet:M=1.\ d'(f(x),f(y))<Md(x,y)\implies\TM{Lip}
+    \]
+
+    Let \(f(a)=f(b)\).
+    \[
+        \implies d'(f(a),f(b))=0
+        \implies d(a,b)=0
+        \implies a=b
+    \]
+\end{proof}
+\ebox
+
+\bboxprop
+\begin{prop}[Isometric Isomorphisms have Isometric Isomorphic Inverses]
+    \(f\) isomet isomor \(\implies f^=\) is isomet isomor
+\end{prop}
+\ebox
+\bboxproof
+\begin{proof}
+    Let \((X,d),\ (Y,d')\) be metric spaces.
+
+    Let \(f:X\to Y\) be a isometric isomorphism. So it's bijective.
+
+    Let \(f^=:Y\to X\) be the inverse of \(f\).
+
+    Let \(a,b\in Y\). Show \(d'(a,b)=d(f^=(a),f^=(b))\).
+    \[
+        d'(a,b)=d'(f(f^=(a)),f(f^=(b)))=d(f^=(a),f^=(b))
+    \]
+    So \(f^=\) is a isometry, and is bijective.
+\end{proof}
+\ebox
+
+\bboxexam
+\begin{exam}
+    \(f:\R\to\R,\ f(x)=x^3\)
+
+    This is homeomorphic, but not a isometric isomorphism (bij).
+\end{exam}
+\ebox
+
+\bboxexam
+\begin{exam}
+    Is \(\ell^1\T{ iso iso to }\ell^\infty\)?
+
+    Since \(\ell^1\) is seperable, and \(\ell^\infty\) isn't,
+    they're not iso iso.
+\end{exam}
+\ebox
+
+\subsection{Urysohn's Lemma}
+
+\bboxthm
+\begin{thm}[Urysohn's Lemma]
+    \((X,d)\). Then if \(A,B\ssq X\) are closed and disjoint, then
+    \(\exists f:X\to[0,1]\) cts s/t \(f|_A=0\) and \(f|_B=1\).
+\end{thm}
+\ebox
+
+\bboxproof
+\begin{proof}
+    For \(x\in X\), let \(d_A(x)=\inf\{d(x,a):a\in A\}\).
+    \bboxnote
+    \begin{note}
+        \(d_A(x)=0\implies\forall n,\ \exists a_n\in A,\ 
+        d(x,a_n)<\frac1n\)
+
+        \(\implies a_n\to x\implies x\in A\) because \(A\) is clsd.
+
+        \(\implies d_A(x)=0\iff x\in A\)
+    \end{note}
+    \ebox
+    \[
+        \forall x,y\in X,\ a\in A:
+        d_A(x)\le d(x,a)\le d(x,y)+d(y,a)
+    \]
+    \[
+        \implies d_A(x)-d(x,y)\le d(y,a)
+    \]
+    \[
+        \implies d_A(x)-d(x,y)\le d_A(y),\ since\ a\ was\ arb.
+    \]
+    \[
+        \implies|d_A(x)-d_A(y)|\le d(x,y)
+    \]
+
+    \[
+        \therefore d_A,d_B:X\to\R\ are\ cts\ b/c\ they're\ lip
+    \]
+    \[
+        \therefore f:X\to[0,1], f(x)=\frac{d_A(x)}{d_A(x)+d_B(x)}\ is\ cts
+    \]
+
+    \[
+        a\in A,\ f(a)=\frac0{0+d_B(a)}=0
+    \]
+    \[
+        b\in B,\ f(b)=\frac{d_A(b)}{d_A(b)+0}=1
+    \]
+\end{proof}
+\ebox
+
 
 % <++>
 \end{document}
-
-
-
-
 
 
 
