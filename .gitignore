@@ -3,3 +3,7 @@
 *.fls
 *.log
 *.gz
+*.o
+gcm*
+syslibs.txt
+order.txt
